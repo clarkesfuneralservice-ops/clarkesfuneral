@@ -87,6 +87,71 @@
             color: var(--accent);
         }
         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: var(--accent);
+        }
+        
         .btn {
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -410,14 +475,35 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div>
                 <a href="tel:+18763261263" class="btn btn-primary">Call 24/7</a>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+            <li><a href="index.html#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="pricing-hero">
@@ -795,5 +881,15 @@
         <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
         <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. All prices subject to change.</p>
     </footer>
+    
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
