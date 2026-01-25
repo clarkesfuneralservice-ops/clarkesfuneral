@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Packages | Clarke's Funeral Services | Kingston, Jamaica</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transparent pricing for funeral services in Kingston, Jamaica. Cremation packages from $190,000, Burial packages from $455,000. Payment plans available. Call 876-326-1263">
+    <meta name="keywords" content="funeral prices Jamaica, cremation cost Kingston, burial packages Jamaica, affordable funeral services, funeral payment plans Kingston">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #8b7355;
+            --accent: #c9a86a;
+            --light: #f5f5f0;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --success: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            height: 100px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #d4b57a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
+        }
+        
+        /* Hero */
+        .pricing-hero {
+            margin-top: 140px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(139, 115, 85, 0.90)),
+                        url('https://images.unsplash.com/photo-1502791451862-7bd8e38d7b30?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .pricing-hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Info Bar */
+        .info-bar {
+            background: var(--accent);
+            padding: 1.5rem 5%;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        .info-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Package Categories */
+        .package-section {
+            padding: 4rem 5%;
+        }
+        
+        .package-section:nth-child(even) {
+            background: var(--light);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        /* Package Grid */
+        .packages-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .package-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent);
+        }
+        
+        .package-card.featured {
+            border-color: var(--accent);
+            position: relative;
+        }
+        
+        .package-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 3rem;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+        
+        .package-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .package-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .package-price {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+        }
+        
+        .package-body {
+            padding: 2rem;
+        }
+        
+        .package-includes {
+            margin-bottom: 2rem;
+        }
+        
+        .package-includes h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .package-features {
+            list-style: none;
+        }
+        
+        .package-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--light);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .package-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .package-cta {
+            text-align: center;
+            padding-top: 1rem;
+        }
+        
+        /* Payment Info */
+        .payment-info {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .payment-info h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .payment-options {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .payment-option {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .payment-option h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .payment-option p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 5%;
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .package-price {
+                font-size: 2.5rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="logo.png" alt="Clarke's Funeral Services Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <a href="tel:+18763261263" class="btn btn-primary">Call 24/7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+            <li><a href="index.html#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <h1>Transparent Pricing for Every Family</h1>
+        <p>Honest, affordable funeral services with no hidden fees. We believe every family deserves dignity and respect, regardless of budget.</p>
+    </section>
+
+    <!-- Info Bar -->
+    <div class="info-bar">
+        <div class="info-bar-content">
+            <div class="info-item">
+                <span>💳</span> Flexible Payment Plans Available
+            </div>
+            <div class="info-item">
+                <span>✓</span> No Hidden Fees
+            </div>
+            <div class="info-item">
+                <span>🤝</span> Insurance Accepted
+            </div>
+            <div class="info-item">
+                <span>📞</span> Free Consultation: 876-326-1263
+            </div>
+        </div>
+    </div>
+
+    <!-- Cremation Packages -->
+    <section class="package-section">
+        <div class="section-header">
+            <h2>Cremation Packages</h2>
+            <div class="accent-line"></div>
+            <p>Dignified cremation services with options to fit every family's needs and budget</p>
+        </div>
+        <div class="packages-grid">
+            <!-- Direct Cremation -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">Direct Cremation</div>
+                    <div class="package-price">$190,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Filing necessary authorizations</li>
+                            <li>Death registration</li>
+                            <li>1 certified copy of Death Certificate</li>
+                            <li>Service vehicle to crematory</li>
+                            <li>Cremation fee</li>
+                            <li>Delivery of ash in temporary container</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simple Cremation -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">Simple Cremation</div>
+                    <div class="package-price">$240,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing of deceased for casketed viewing at our facility</li>
+                            <li>Filing necessary authorizations</li>
+                            <li>Death registration</li>
+                            <li>1 certified copy of Death Certificate</li>
+                            <li>Service vehicle to crematory</li>
+                            <li>Cremation fee</li>
+                            <li>Delivery of ash in temporary container</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Cremation -->
+            <div class="package-card featured">
+                <div class="package-header">
+                    <div class="package-name">Standard Cremation</div>
+                    <div class="package-price">$340,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing of deceased for funeral service</li>
+                            <li>Hearse hire</li>
+                            <li>50 programs</li>
+                            <li>Casket rental and casket piece</li>
+                            <li>One death notice in the Gleaner</li>
+                            <li>Filing necessary authorizations</li>
+                            <li>Death registration</li>
+                            <li>3 certified copies of Death Certificate</li>
+                            <li>Service vehicle to crematory</li>
+                            <li>Cremation fee</li>
+                            <li>Delivery of ash in standard wooden urn</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Cremation -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">Premium Cremation</div>
+                    <div class="package-price">$440,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing for viewing and funeral service</li>
+                            <li>Hearse hire</li>
+                            <li>100 programs</li>
+                            <li>100 prayer cards</li>
+                            <li>Casket rental and casket piece</li>
+                            <li>Live streaming</li>
+                            <li>Death notices in Gleaner, Power 106, and TVJ</li>
+                            <li>Urn vault at Dovecot Cemetery</li>
+                            <li>Filing necessary authorizations</li>
+                            <li>Death registration</li>
+                            <li>3 certified copies of Death Certificate</li>
+                            <li>Service vehicle to crematory</li>
+                            <li>Cremation fee</li>
+                            <li>Delivery of ash in standard wooden urn</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memorial Service Package -->
+    <section class="package-section">
+        <div class="section-header">
+            <h2>Memorial Service Package</h2>
+            <div class="accent-line"></div>
+            <p>Honor your loved one with a beautiful memorial celebration</p>
+        </div>
+        <div class="packages-grid">
+            <div class="package-card" style="max-width: 500px; margin: 0 auto;">
+                <div class="package-header">
+                    <div class="package-name">Memorial Service</div>
+                    <div class="package-price">$308,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>One death notice in the Gleaner</li>
+                            <li>100 programs</li>
+                            <li>100 prayer cards</li>
+                            <li>Live streaming</li>
+                            <li>12x10 framed photo</li>
+                            <li>Filing necessary authorizations</li>
+                            <li>Death registration</li>
+                            <li>1 certified copy of Death Certificate</li>
+                            <li>Service vehicle to crematory</li>
+                            <li>Cremation fee</li>
+                            <li>Standard wooden urn</li>
+                            <li>Urn piece</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Burial Packages -->
+    <section class="package-section">
+        <div class="section-header">
+            <h2>Burial Packages</h2>
+            <div class="accent-line"></div>
+            <p>Traditional burial services with complete arrangements and cemetery coordination</p>
+        </div>
+        <div class="packages-grid">
+            <!-- Basic Burial -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">Basic Burial</div>
+                    <div class="package-price">$455,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing of deceased for funeral service</li>
+                            <li>Hearse hire</li>
+                            <li>50 programs</li>
+                            <li>One death notice in the Gleaner</li>
+                            <li>Standard local casket</li>
+                            <li>Casket piece</li>
+                            <li>Half/Double vault at Dovecot Cemetery</li>
+                            <li>Death registration</li>
+                            <li>1 certified copy of Death Certificate</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simple Burial -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">Simple Burial</div>
+                    <div class="package-price">$500,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing for viewing and funeral service</li>
+                            <li>Hearse hire</li>
+                            <li>100 programs</li>
+                            <li>100 prayer cards</li>
+                            <li>Standard local casket</li>
+                            <li>Casket piece</li>
+                            <li>Death notices in Gleaner and Power 106</li>
+                            <li>Half/Double vault at Dovecot Cemetery</li>
+                            <li>Death registration</li>
+                            <li>1 certified copy of Death Certificate</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Burial -->
+            <div class="package-card featured">
+                <div class="package-header">
+                    <div class="package-name">Standard Burial</div>
+                    <div class="package-price">$550,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing for viewing and funeral service</li>
+                            <li>Hearse hire</li>
+                            <li>100 programs</li>
+                            <li>100 prayer cards</li>
+                            <li>Death notices in Gleaner, TVJ, and Power 106</li>
+                            <li>Live streaming</li>
+                            <li>Standard local casket</li>
+                            <li>Casket piece</li>
+                            <li>Half/Double vault at Dovecot Cemetery</li>
+                            <li>Death registration</li>
+                            <li>3 certified copies of Death Certificate</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Burial -->
+            <div class="package-card">
+                <div class="package-header">
+                    <div class="package-name">Premium Burial</div>
+                    <div class="package-price">$880,000</div>
+                </div>
+                <div class="package-body">
+                    <div class="package-includes">
+                        <h4>This package includes:</h4>
+                        <ul class="package-features">
+                            <li>Transfer from place of death to funeral home</li>
+                            <li>Refrigeration</li>
+                            <li>Basic services of Funeral Director and staff</li>
+                            <li>Embalming</li>
+                            <li>Washing and dressing for viewing and funeral service</li>
+                            <li>Hearse hire</li>
+                            <li>100 programs</li>
+                            <li>100 prayer cards</li>
+                            <li>Live streaming</li>
+                            <li>Imported hardwood casket</li>
+                            <li>Casket piece</li>
+                            <li>Death notices in Gleaner, TVJ, and Power 106</li>
+                            <li>Single vault at Dovecot Cemetery</li>
+                            <li>Police escort to cemetery</li>
+                            <li>Death registration</li>
+                            <li>3 certified copies of Death Certificate</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="tel:+18763261263" class="btn btn-primary">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Information -->
+    <section class="payment-info">
+        <h2>Flexible Payment Options</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem;">We understand that funeral costs can be overwhelming. We're here to help with flexible payment solutions.</p>
+        <div class="payment-options">
+            <div class="payment-option">
+                <h3>💳 Payment Plans</h3>
+                <p>Flexible payment arrangements available to fit your budget. Speak with our staff about options.</p>
+            </div>
+            <div class="payment-option">
+                <h3>🏢 Insurance</h3>
+                <p>We accept insurance assignments and work directly with most insurance providers in Jamaica.</p>
+            </div>
+            <div class="payment-option">
+                <h3>💰 Multiple Methods</h3>
+                <p>Cash, bank transfer, debit/credit cards, and mobile money accepted.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Need Help Choosing a Package?</h2>
+        <p>Our compassionate team is available 24/7 to discuss your needs and help you select the right service for your loved one.</p>
+        <div class="cta-buttons">
+            <a href="tel:+18763261263" class="btn btn-primary">📞 Call +1 876 326 1263</a>
+            <a href="https://wa.me/18763261263" class="btn btn-primary">💬 WhatsApp Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
+        <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. All prices subject to change.</p>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
