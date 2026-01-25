@@ -132,6 +132,71 @@
             color: var(--accent);
         }
         
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 120px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: var(--accent);
+        }
+        
         .nav-cta {
             display: flex;
             gap: 1rem;
@@ -141,8 +206,7 @@
         .hero {
             margin-top: 120px;
             min-height: 90vh;
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92), rgba(139, 115, 85, 0.88)),
-                        url('https://images.unsplash.com/photo-1571501679680-de32f1e7aad4?w=1600&q=80');
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             background-size: cover;
             background-position: center;
             display: flex;
@@ -337,18 +401,30 @@
             background: var(--light);
             border-radius: 10px;
             border-left: 4px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         
         .value-item h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .value-item h4 span {
+            font-size: 1.5rem;
+            line-height: 1;
         }
         
         .value-item p {
             font-size: 0.95rem;
             color: var(--text-light);
             margin: 0;
+            padding-left: 2.25rem;
         }
         
         .about-image {
@@ -410,49 +486,6 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(201, 168, 106, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            transition: opacity 0.3s;
-        }
-        
-        .service-card:nth-child(1)::before {
-            background-image: url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&q=80');
-        }
-        
-        .service-card:nth-child(2)::before {
-            background-image: url('https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=800&q=80');
-        }
-        
-        .service-card:nth-child(3)::before {
-            background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80');
-        }
-        
-        .service-card:nth-child(4)::before {
-            background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80');
-        }
-        
-        .service-card:nth-child(5)::before {
-            background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80');
-        }
-        
-        .service-card:nth-child(6)::before {
-            background-image: url('https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800&q=80');
-        }
-        
-        .service-card:hover::before {
-            opacity: 0.25;
         }
         
         .service-card:hover {
@@ -463,32 +496,22 @@
         .service-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
         }
         
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--primary);
-            position: relative;
-            z-index: 1;
         }
         
         .service-card p {
             color: var(--text-light);
             line-height: 1.8;
-            position: relative;
-            z-index: 1;
         }
         
         /* Why Choose Us */
         .why-choose {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(139, 115, 85, 0.95)),
-                        url('https://images.unsplash.com/photo-1465146633011-14f8e0781093?w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
         }
         
@@ -578,10 +601,7 @@
         
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, rgba(201, 168, 106, 0.95), rgba(139, 115, 85, 0.95)),
-                        url('https://images.unsplash.com/photo-1502791451862-7bd8e38d7b30?w=1600&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
             text-align: center;
             color: var(--white);
             padding: 5rem 5%;
@@ -770,6 +790,14 @@
                 display: none;
             }
             
+            .nav-cta {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -813,14 +841,34 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="nav-cta">
                 <a href="tel:+18763261263" class="btn btn-primary">Call 24/7</a>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+            <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -874,19 +922,19 @@
                 
                 <div class="about-values">
                     <div class="value-item">
-                        <h4>🤝 Integrity</h4>
+                        <h4><span>🤝</span> Integrity</h4>
                         <p>Honest, transparent service you can trust</p>
                     </div>
                     <div class="value-item">
-                        <h4>❤️ Compassion</h4>
+                        <h4><span>❤️</span> Compassion</h4>
                         <p>Genuine care for every family we serve</p>
                     </div>
                     <div class="value-item">
-                        <h4>⭐ Excellence</h4>
+                        <h4><span>⭐</span> Excellence</h4>
                         <p>Professional service in every detail</p>
                     </div>
                     <div class="value-item">
-                        <h4>🙏 Respect</h4>
+                        <h4><span>🙏</span> Respect</h4>
                         <p>Honoring all cultural and religious traditions</p>
                     </div>
                 </div>
@@ -898,20 +946,20 @@
                     <div style="width: 80px; height: 3px; background: var(--accent); margin: 1.5rem auto;"></div>
                     <p style="font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.8;">Proudly Serving Jamaica</p>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; width: 100%;">
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📍</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem; line-height: 1;">📍</div>
                             <div style="font-size: 0.9rem;">Kingston</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🕒</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem; line-height: 1;">🕒</div>
                             <div style="font-size: 0.9rem;">24/7 Service</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📞</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem; line-height: 1;">📞</div>
                             <div style="font-size: 0.9rem;">876-326-1263</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">❤️</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem; line-height: 1;">❤️</div>
                             <div style="font-size: 0.9rem;">Family Focused</div>
                         </div>
                     </div>
@@ -1198,4 +1246,4 @@
         });
     </script>
 </body>
-</html>           
+</html>
