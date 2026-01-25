@@ -79,15 +79,39 @@
 </section>
 
 <section>
-  <h2>Google Reviews</h2>
-  <p class="sub">Trusted by families across Jamaica for compassionate, professional service.</p>
-  <div class="grid">
-    <div class="card">⭐️⭐️⭐️⭐️⭐️<br><strong>Verified Google Review</strong><br>“Excellent service. Mr. Clarke and his team provided very professional service. All processes were efficient and seamless from start to finish, providing peace of mind for the family.”</div>
-    <div class="card">⭐️⭐️⭐️⭐️⭐️<br><strong>Verified Google Review</strong><br>“Professional, compassionate and supportive throughout the entire process.”</div>
-    <div class="card">⭐️⭐️⭐️⭐️⭐️<br><strong>Verified Google Review</strong><br>“Respectful service, clear communication and genuine care for our family.”</div>
-  </div>
-  <p style="text-align:center;margin-top:25px;">Read more reviews on our Google Business Profile</p>
+  <h2>Live Google Reviews</h2>
+  <p class="sub">Real reviews from our Google Business Profile — trusted by families across Jamaica.</p>
+  <div id="google-reviews" class="grid"></div>
+  <p style="text-align:center;margin-top:25px;">Reviews are pulled live from Google</p>
 </section>
+
+<script>
+// LIVE GOOGLE REVIEWS INTEGRATION
+// Requires Google Places API Key
+// Setup instructions:
+// 1) Go to https://console.cloud.google.com/
+// 2) Create project
+// 3) Enable: Places API
+// 4) Create API Key
+// 5) Replace YOUR_API_KEY and PLACE_ID below
+
+const API_KEY = 'YOUR_API_KEY';
+const PLACE_ID = 'YOUR_PLACE_ID';
+
+fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,rating&key=${API_KEY}`)
+  .then(res => res.json())
+  .then(data => {
+    const reviews = data.result.reviews.slice(0,6);
+    const container = document.getElementById('google-reviews');
+    reviews.forEach(r => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `⭐️⭐️⭐️⭐️⭐️<br><strong>${r.author_name}</strong><br>${r.text}`;
+      container.appendChild(div);
+    });
+  })
+  .catch(err => console.error('Google Reviews Error:', err));
+</script>
 
 <section>
   <h2>Obituaries & Memorials</h2>
