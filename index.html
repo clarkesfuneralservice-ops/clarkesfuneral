@@ -4,23 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clarke’s Funeral Services</title>
-  <meta name="description" content="Compassionate, professional funeral services in Jamaica. Clarke’s Funeral Services provides cremation, burial, memorials, repatriation, and 24/7 family support with dignity and care.">
+  <meta name="description" content="Compassionate, professional funeral services in Jamaica. Clarke’s Funeral Services provides cremation, burial, memorials, repatriation, transportation, and 24/7 family support with dignity and care.">
   <style>
-    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8fb;color:#1f2937;}
-    header {background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:40px 20px;text-align:center;}
-    header img{max-width:120px;margin-bottom:15px;}
-    h1{margin:10px 0;font-size:2.2rem;}
-    .tagline{opacity:0.9;font-size:1.1rem;}
-    .cta{margin-top:20px;}
-    .cta a{display:inline-block;margin:6px;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:600;}
+    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#f7f9fc;color:#1f2937;}
+    header{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:60px 20px;text-align:center;}
+    header img{max-width:130px;margin-bottom:18px;}
+    h1{margin:10px 0;font-size:2.4rem;letter-spacing:0.5px;}
+    .tagline{opacity:0.9;font-size:1.15rem;}
+    .cta{margin-top:25px;}
+    .cta a{display:inline-block;margin:8px;padding:13px 26px;border-radius:30px;text-decoration:none;font-weight:600;transition:0.3s;}
+    .cta a:hover{transform:translateY(-2px);}
     .whatsapp{background:#25D366;color:#fff;}
     .call{background:#fff;color:#0f172a;}
-    section{padding:60px 20px;max-width:1100px;margin:auto;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
-    .card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,0.06);}
-    .trust{background:#e5ecf6;}
-    footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:30px 15px;font-size:0.9rem;}
-    .float-whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 6px 15px rgba(0,0,0,0.2);}    
+    section{padding:70px 20px;max-width:1150px;margin:auto;}
+    h2{text-align:center;margin-bottom:40px;font-size:1.9rem;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
+    .card{background:#fff;border-radius:18px;padding:26px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:0.3s;}
+    .card:hover{transform:translateY(-4px);}
+    .trust{background:#eaf0f8;}
+    .testimonials{background:#f1f5fb;}
+    .testimonial{font-style:italic;}
+    .map-box{border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);}
+    footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:35px 15px;font-size:0.9rem;}
+    .float-whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 6px 15px rgba(0,0,0,0.25);}    
+    .mobile-call{position:fixed;bottom:20px;left:20px;background:#0f172a;color:#fff;padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 6px 15px rgba(0,0,0,0.25);}    
   </style>
 </head>
 <body>
@@ -57,28 +64,46 @@
   </div>
 </section>
 
+<section class="testimonials">
+  <h2>What Families Say</h2>
+  <div class="grid">
+    <div class="card testimonial">“Excellent service. Professional, seamless, and compassionate from start to finish.”</div>
+    <div class="card testimonial">“Provided peace of mind during one of the most difficult moments of our lives.”</div>
+    <div class="card testimonial">“Truly supportive, respectful, and caring service.”</div>
+  </div>
+</section>
+
 <section>
   <h2>Obituaries & Memorials</h2>
-  <p>We honor the lives of those who have passed with dignity and respect. Families may share obituary notices and service information for loved ones and the wider community.</p>
-  <div class="grid">
+  <p style="text-align:center;max-width:700px;margin:auto;">We honor the lives of those who have passed with dignity and respect. Families may share obituary notices and service information for loved ones and the wider community.</p>
+  <div class="grid" style="margin-top:30px;">
     <div class="card"><strong>In Loving Memory</strong><p>Name</p><p>Service Date</p><p>Location</p></div>
     <div class="card"><strong>In Loving Memory</strong><p>Name</p><p>Service Date</p><p>Location</p></div>
   </div>
 </section>
 
 <section>
+  <h2>Our Location</h2>
+  <div class="map-box">
+    <iframe src="https://www.google.com/maps?q=Kingston%20Jamaica&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section>
   <h2>Contact Us</h2>
-  <p><strong>Phone:</strong> +1 876 326 1263</p>
-  <p><strong>WhatsApp:</strong> +1 876 326 1263</p>
-  <p><strong>Service Areas:</strong> Kingston, St. Andrew & surrounding parishes</p>
-  <p><strong>Hours:</strong> 24/7 Support</p>
+  <p style="text-align:center;"><strong>Phone:</strong> +1 876 326 1263</p>
+  <p style="text-align:center;"><strong>WhatsApp:</strong> +1 876 326 1263</p>
+  <p style="text-align:center;"><strong>Service Areas:</strong> Kingston, St. Andrew & surrounding parishes</p>
+  <p style="text-align:center;"><strong>Hours:</strong> 24/7 Support</p>
 </section>
 
 <footer>
-  © Clarke’s Funeral Services — Serving families with dignity and care
+  © Clarke’s Funeral Services — Serving families with dignity, care, and compassion
 </footer>
 
 <a class="float-whatsapp" href="https://wa.me/18763261263">WhatsApp</a>
+<a class="mobile-call" href="tel:+18763261263">Call</a>
 
 </body>
 </html>
+
