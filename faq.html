@@ -8,77 +8,796 @@
     <!-- SEO Meta -->
     <meta name="description" content="Funeral service FAQs in Jamaica. Learn about cremation, burial, funeral costs, death certificates, repatriation, memorial services, and funeral planning in Kingston, Jamaica.">
     <meta name="keywords" content="funeral FAQ Jamaica, cremation Jamaica, burial Jamaica, funeral cost Jamaica, death certificate Jamaica, funeral planning Kingston, Clarke's Funeral Services">
-
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/faq.html">
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body{margin:0;font-family:'Inter',sans-serif;background:#f5f5f0;color:#333}
-        h1,h2,h3{font-family:'Playfair Display',serif;color:#1a1a2e}
-        nav{background:#1a1a2e;padding:1rem 5%;position:fixed;width:100%;top:0;z-index:999}
-        nav a{color:#fff;text-decoration:none;font-weight:500}
-        .nav-container{display:flex;justify-content:space-between;align-items:center}
-        .container{max-width:1100px;margin:auto;padding:2rem}
-        .hero{margin-top:120px;text-align:center;padding:3rem 1rem;background:linear-gradient(135deg,#1a1a2e,#8b7355);color:white}
-        .hero h1{color:white}
-        .faq{margin-top:3rem}
-        .faq-item{background:white;margin-bottom:1rem;padding:1.5rem;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.08)}
-        .faq-item h3{margin-bottom:.5rem}
-        footer{background:#1a1a2e;color:white;text-align:center;padding:2rem;margin-top:3rem}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #8b7355;
+            --accent: #c9a86a;
+            --light: #f5f5f0;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            height: 100px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #d4b57a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 140px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        /* Category Sections */
+        .category-section {
+            padding: 4rem 5%;
+        }
+        
+        .category-section:nth-child(even) {
+            background: var(--light);
+        }
+        
+        .category-section:nth-child(odd) {
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* FAQ Items */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.15rem;
+            transition: background 0.3s;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-question:hover {
+            background: var(--light);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 2rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+            font-weight: 300;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 300px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            background: var(--primary);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .quick-links h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .links-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .link-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .link-card:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .link-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .link-card h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .link-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .btn-white:hover {
+            background: var(--light);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-container > div:last-child {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.25rem 1.5rem;
+            }
+            
+            .faq-answer-content {
+                padding: 0 1.5rem 1.25rem;
+            }
+        }
     </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav>
     <div class="nav-container">
         <div class="logo-container">
-    <a href="index.html">
-        <img src="logo.png" alt="Clarke's Funeral Services Logo" style="height:70px;">
-    </a>
-</div>
-
-            <a href="index.html">Home</a> | 
-            <a href="pricing.html">Pricing</a> | 
-            <a href="faq.html">FAQ</a> | 
-            <a href="index.html#contact">Contact</a>
+            <a href="index.html"><img src="logo.png" alt="Clarke's Funeral Services Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="preplanning.html">Pre-Planning</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-cta">
+            <a href="tel:+18763261263" class="btn btn-primary">Call 24/7</a>
         </div>
     </div>
 </nav>
 
-<section class="hero">
-    <h1>Funeral Services FAQ</h1>
-    <p>Answers to common questions about funeral services, cremation, burial, and memorial planning in Jamaica</p>
-</section>
-
-<div class="container faq">
-
-<div class="faq-item"><h3>Do you offer cremation services in Jamaica?</h3><p>Yes. Clarke's Funeral Services provides full cremation services in Jamaica, including direct cremation, memorial cremation, and premium cremation packages.</p></div>
-
-<div class="faq-item"><h3>Is cremation cheaper than burial in Jamaica?</h3><p>In most cases, cremation is more affordable than traditional burial. It eliminates costs such as caskets, vaults, and burial plots.</p></div>
-
-<div class="faq-item"><h3>How much does cremation cost in Kingston, Jamaica?</h3><p>Cremation costs vary based on services selected. Clarke's Funeral Services offers affordable cremation packages with transparent pricing.</p></div>
-
-<div class="faq-item"><h3>Do you provide burial services?</h3><p>Yes. We offer complete burial services including embalming, casket selection, hearse services, vault coordination, and cemetery arrangements.</p></div>
-
-<div class="faq-item"><h3>Do you assist with death certificates?</h3><p>Yes. We handle death registration and certified death certificate processing for families.</p></div>
-
-<div class="faq-item"><h3>Do you provide international repatriation?</h3><p>Yes. We arrange international repatriation services including documentation, embalming, airline coordination, and logistics.</p></div>
-
-<div class="faq-item"><h3>Do you offer memorial services?</h3><p>Yes. We provide customized memorial services, celebration of life ceremonies, and livestreamed memorial services.</p></div>
-
-<div class="faq-item"><h3>Are payment plans available?</h3><p>Yes. Flexible payment plans and insurance assignments are available to help families manage funeral costs.</p></div>
-
-<div class="faq-item"><h3>Are you available 24/7?</h3><p>Yes. Clarke's Funeral Services operates 24/7 to assist families in times of need.</p></div>
-
-<div class="faq-item"><h3>Where are you located?</h3><p>We serve Kingston and surrounding areas across Jamaica with compassionate, professional funeral services.</p></div>
-
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+        <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+        <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+        <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+        <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+    </ul>
 </div>
 
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about funeral services, cremation, burial, and memorial planning in Jamaica</p>
+</section>
+
+<!-- Cremation FAQs -->
+<section class="category-section">
+    <div class="section-header">
+        <h2>🕊️ Cremation Services</h2>
+        <div class="accent-line"></div>
+    </div>
+    <div class="container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you offer cremation services in Jamaica?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. Clarke's Funeral Services provides comprehensive cremation services throughout Jamaica, including direct cremation, simple cremation, standard cremation, and premium cremation packages. We handle everything from transfer and refrigeration to the cremation process and delivery of ashes in your choice of urn.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Is cremation cheaper than burial in Jamaica?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes, cremation is typically more affordable than traditional burial. It eliminates costs such as cemetery plots, vaults, and permanent caskets. Our cremation packages start at $190,000 for direct cremation, while burial packages start at $455,000. However, the final cost depends on the specific services you choose.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                How much does cremation cost in Kingston, Jamaica?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Our cremation packages range from $190,000 (direct cremation) to $440,000 (premium cremation with full service, live streaming, and urn vault). We offer transparent pricing with no hidden fees. Visit our <a href="pricing.html" style="color: var(--accent); font-weight: 600;">Pricing page</a> for complete package details.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                How long does the cremation process take?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    The cremation process itself takes approximately 2-3 hours. However, the entire timeline from death to receiving ashes typically takes 5-7 days, depending on necessary authorizations, death certificate processing, and scheduling. We work efficiently to honor your loved one while respecting all legal requirements.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Can I have a viewing before cremation?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Absolutely. Our Simple, Standard, and Premium cremation packages include embalming and viewing options. Families can have a traditional visitation at our facility or a full funeral service before cremation. This allows loved ones to say goodbye and provides closure.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Burial FAQs -->
+<section class="category-section">
+    <div class="section-header">
+        <h2>⚰️ Burial Services</h2>
+        <div class="accent-line"></div>
+    </div>
+    <div class="container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you provide burial services?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. We offer complete traditional burial services including embalming, casket selection, hearse services, vault coordination, cemetery arrangements, and graveside services. Our burial packages range from $455,000 to $880,000 and include everything needed for a dignified farewell.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Which cemeteries do you work with?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    We work with all major cemeteries throughout Jamaica, including Dovecot Memorial Park and other locations in Kingston, St. Andrew, and surrounding parishes. We coordinate directly with cemetery staff to ensure smooth arrangements and can assist with plot selection if needed.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                What's included in your burial packages?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Our burial packages include: transfer of remains, refrigeration, embalming, washing and dressing, funeral service coordination, casket (local or imported hardwood), hearse service, funeral programs, prayer cards, casket piece (flowers), vault at cemetery, death registration, certified death certificates, and optional services like live streaming and death notices in media.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- General Services FAQs -->
+<section class="category-section">
+    <div class="section-header">
+        <h2>📋 General Services</h2>
+        <div class="accent-line"></div>
+    </div>
+    <div class="container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you assist with death certificates?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. We handle all death registration and secure certified copies of death certificates for your family. The number of certified copies included depends on your package (1-3 copies), and additional copies can be obtained if needed. This service is included in all our packages.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you provide international repatriation?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. We specialize in international repatriation services, helping families transport loved ones to or from Jamaica. We handle all documentation, consulate coordination, embalming for transport, airline arrangements, and customs clearance. Our team has extensive experience with repatriation to the United States, Canada, United Kingdom, and other countries worldwide.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you offer memorial services?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. We provide fully customized memorial services and celebration of life ceremonies. Our $308,000 memorial service package includes programs, prayer cards, live streaming, a framed photo, cremation, and urn. Memorial services can be held at churches, funeral homes, or other meaningful locations.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you provide live streaming for funerals?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes! Live streaming is included in our Standard and Premium packages (both cremation and burial). This allows family and friends around the world to participate in the service remotely. We handle all technical setup and provide a private link for viewing.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Payment & Planning FAQs -->
+<section class="category-section">
+    <div class="section-header">
+        <h2>💳 Payment & Planning</h2>
+        <div class="accent-line"></div>
+    </div>
+    <div class="container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Are payment plans available?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. We offer flexible payment plans to help families manage funeral costs. We also accept insurance assignments and work directly with most insurance providers in Jamaica. Payment options include cash, bank transfer, debit/credit cards, and mobile money. Contact us to discuss arrangements that fit your budget.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Can I pre-plan my funeral?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Absolutely! Pre-planning is one of the most thoughtful gifts you can give your family. It allows you to lock in current prices, ensure your wishes are honored, and relieve your loved ones of difficult decisions during an emotional time. Visit our <a href="preplanning.html" style="color: var(--accent); font-weight: 600;">Pre-Planning page</a> to learn more and request a free consultation.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do your prices include everything?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Our package prices are all-inclusive with no hidden fees. Each package clearly lists every service included. Any additional services (extra death certificates, upgraded caskets, additional flowers, etc.) are available à la carte and will be discussed with you upfront. We believe in complete transparency.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Availability & Service Area FAQs -->
+<section class="category-section">
+    <div class="section-header">
+        <h2>📍 Availability & Service Area</h2>
+        <div class="accent-line"></div>
+    </div>
+    <div class="container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Are you available 24/7?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Yes. Clarke's Funeral Services operates 24 hours a day, 7 days a week, 365 days a year. Death doesn't follow a schedule, and neither do we. Call us anytime at <strong>876-326-1263</strong> or message us on WhatsApp for immediate assistance.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Where are you located and what areas do you serve?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    We're located at <strong>42 East Street, Kingston</strong> and proudly serve Kingston, St. Andrew, Portmore, Portland, St. Thomas, Clarendon, and surrounding parishes throughout Jamaica. Our professional transportation services ensure we can assist families across the island.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                How quickly can you respond?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    We respond immediately to all calls and messages. Our team can typically arrive within 1-2 hours for transfer of remains in Kingston and St. Andrew, and within 2-4 hours for other parishes depending on location. We understand the urgency and treat every family with priority care.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Links -->
+<section class="quick-links">
+    <h3>Explore More</h3>
+    <div class="links-grid">
+        <a href="pricing.html" class="link-card">
+            <span class="icon">💰</span>
+            <h4>View Pricing</h4>
+            <p>See all our packages and transparent pricing</p>
+        </a>
+        <a href="preplanning.html" class="link-card">
+            <span class="icon">📝</span>
+            <h4>Pre-Planning</h4>
+            <p>Plan ahead and ease the burden on loved ones</p>
+        </a>
+        <a href="index.html#services" class="link-card">
+            <span class="icon">🕊️</span>
+            <h4>Our Services</h4>
+            <p>Complete list of funeral services we offer</p>
+        </a>
+        <a href="index.html#contact" class="link-card">
+            <span class="icon">📞</span>
+            <h4>Contact Us</h4>
+            <p>Reach out for compassionate support</p>
+        </a>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <h2>Still Have Questions?</h2>
+    <p>Our compassionate team is available 24/7 to answer your questions and provide guidance during this difficult time.</p>
+    <div class="cta-buttons">
+        <a href="tel:+18763261263" class="btn btn-white">📞 Call +1 876 326 1263</a>
+        <a href="https://wa.me/18763261263" class="btn btn-white">💬 WhatsApp Us</a>
+        <a href="index.html#contact" class="btn btn-primary">Contact Form</a>
+    </div>
+</section>
+
+<!-- Footer -->
 <footer>
-    <p>Clarke's Funeral Services | Kingston, Jamaica | Call 876-326-1263</p>
-    <p style="opacity:0.8;font-size:0.9rem;">© 2026 Clarke's Funeral Services</p>
+    <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
+    <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. Serving families with dignity since 2019.</p>
 </footer>
 
-</body>
-</html>
+<script>
+    // Mobile menu toggle
+    function toggleMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const nav = document.querySelector('nav');
+        
+        if (!nav.contains(event.target) && mobileMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+    });
+    
+    // FAQ toggle
+    function toggleFA
