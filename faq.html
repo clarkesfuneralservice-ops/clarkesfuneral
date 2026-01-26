@@ -802,4 +802,25 @@
     // FAQ toggle
     function toggleFAQ(element) {
         const answer = element.nextElementSibling;
-        const allQuestions = document.querySelectorAll('.faq-
+        const allQuestions = document.querySelectorAll('.faq-question');
+        const allAnswers = document.querySelectorAll('.faq-answer');
+        
+        // Close all other FAQs
+        allQuestions.forEach(q => {
+            if (q !== element) {
+                q.classList.remove('active');
+            }
+        });
+        allAnswers.forEach(a => {
+            if (a !== answer) {
+                a.classList.remove('active');
+            }
+        });
+        
+        // Toggle clicked FAQ
+        element.classList.toggle('active');
+        answer.classList.toggle('active');
+    }
+</script>
+</body>
+</html>
