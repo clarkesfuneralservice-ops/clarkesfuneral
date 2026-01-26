@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obituaries | Clarke's Funeral Services | Kingston, Jamaica</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="View recent obituaries and memorials from Clarke's Funeral Services in Kingston, Jamaica. Honor loved ones, share condolences, and celebrate lives remembered.">
+    <meta name="keywords" content="obituaries Jamaica, death notices Kingston, funeral announcements Jamaica, memorial tributes, condolences Jamaica, Clarke's Funeral Services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/obituaries.html">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #8b7355;
+            --accent: #c9a86a;
+            --light: #f5f5f0;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            height: 100px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #d4b57a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 140px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        /* Obituaries Grid */
+        .obituaries-section {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        .obituaries-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .obituary-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .obituary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .obituary-image {
+            width: 100%;
+            height: 300px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .obituary-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .placeholder-icon {
+            font-size: 5rem;
+            color: var(--text-light);
+        }
+        
+        .obituary-content {
+            padding: 2rem;
+        }
+        
+        .obituary-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .obituary-dates {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .obituary-excerpt {
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .obituary-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light);
+        }
+        
+        .service-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .view-full {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .view-full:hover {
+            color: var(--secondary);
+        }
+        
+        /* Full Obituary Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal.active {
+            display: block;
+        }
+        
+        .modal-content {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            background: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            padding: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+        
+        .modal-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .modal-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--text-light);
+        }
+        
+        .modal-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .modal-dates {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .modal-body {
+            padding: 3rem;
+        }
+        
+        .life-story {
+            line-height: 1.9;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+        
+        .service-details {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .service-details h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+        
+        .info-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+        
+        /* Share Buttons */
+        .share-section {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--light);
+        }
+        
+        .share-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .share-facebook {
+            background: #1877f2;
+        }
+        
+        .share-twitter {
+            background: #1da1f2;
+        }
+        
+        .share-whatsapp {
+            background: #25d366;
+        }
+        
+        .share-email {
+            background: var(--secondary);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Condolences Section */
+        .condolences-section {
+            border-top: 2px solid var(--light);
+            padding-top: 2rem;
+        }
+        
+        .condolences-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .condolence-form {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(201, 168, 106, 0.2);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .condolences-list {
+            margin-top: 2rem;
+        }
+        
+        .condolence-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .condolence-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .condolence-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .condolence-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .condolence-message {
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-container > div:last-child {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .obituaries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+            }
+            
+            .modal-body {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.png" alt="Clarke's Funeral Services Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="preplanning.html">Pre-Planning</a></li>
+            <li><a href="obituaries.html">Obituaries</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-cta">
+            <a href="tel:+18763261263" class="btn btn-primary">Call 24/7</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+        <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+        <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+        <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
+        <li><a href="obituaries.html" onclick="toggleMenu()">Obituaries</a></li>
+        <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
+        <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+        <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+    </ul>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>In Loving Memory</h1>
+    <p>Honoring lives, preserving memories, and celebrating the legacies of those we've lost</p>
+</section>
+
+<!-- Obituaries Section -->
+<section class="obituaries-section">
+    <div class="section-header">
+        <h2>Recent Obituaries & Memorials</h2>
+        <div class="accent-line"></div>
+        <p>Click on any memorial to view the full tribute, share condolences, and honor their memory</p>
+    </div>
+    
+    <div class="obituaries-grid" id="obituariesGrid">
+        <!-- Obituaries will be loaded here -->
+    </div>
+</section>
+
+<!-- Full Obituary Modal -->
+<div class="modal" id="obituaryModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-header">
+            <div class="modal-photo" id="modalPhoto">
+                <div class="modal-photo-placeholder">🕊️</div>
+            </div>
+            <h2 class="modal-name" id="modalName"></h2>
+            <p class="modal-dates" id="modalDates"></p>
+        </div>
+        <div class="modal-body">
+            <div class="life-story" id="modalStory"></div>
+            
+            <div class="service-details">
+                <h3>Service Information</h3>
+                <div class="service-info" id="serviceInfo"></div>
+            </div>
+            
+            <div class="share-section">
+                <h4>Share This Memorial</h4>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn share-facebook" id="shareFacebook" target="_blank">
+                        📘 Facebook
+                    </a>
+                    <a href="#" class="share-btn share-twitter" id="shareTwitter" target="_blank">
+                        🐦 Twitter
+                    </a>
+                    <a href="#" class="share-btn share-whatsapp" id="shareWhatsApp" target="_blank">
+                        💬 WhatsApp
+                    </a>
+                    <a href="#" class="share-btn share-email" id="shareEmail">
+                        ✉️ Email
+                    </a>
+                </div>
+            </div>
+            
+            <div class="condolences-section">
+                <h3>Condolences & Messages</h3>
+                
+                <div class="condolence-form">
+                    <h4 style="margin-bottom: 1rem;">Leave a Message of Condolence</h4>
+                    <form id="condolenceForm">
+                        <div class="form-group">
+                            <label for="condolenceName">Your Name *</label>
+                            <input type="text" id="condolenceName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="condolenceEmail">Email (optional - will not be displayed)</label>
+                            <input type="email" id="condolenceEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="condolenceMessage">Your Message *</label>
+                            <textarea id="condolenceMessage" placeholder="Share your memories, condolences, or tribute..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Post Condolence</button>
+                    </form>
+                </div>
+                
+                <div class="condolences-list" id="condolencesList">
+                    <!-- Condolences will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
+    <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. Serving families with dignity since 2019.</p>
+</footer>
+
+<script>
+    // Sample obituaries data (In production, this would come from a database)
+    const obituaries = [
+        {
+            id: 1,
+            name: "Sample Memorial",
+            birthDate: "January 1, 1950",
+            deathDate: "December 31, 2025",
+            photo: null,
+            excerpt: "This is a sample obituary to demonstrate the layout. Replace with actual obituaries...",
+            fullStory: `This is a sample obituary memorial page. In production, you would replace this with actual content about the deceased.
+
+The life story section can include multiple paragraphs detailing the person's life, achievements, family, hobbies, and the impact they had on others.
+
+You can add as much or as little detail as the family wishes to share.`,
+            serviceDate: "January 10, 2026",
+            serviceTime: "10:00 AM",
+            serviceLocation: "Church Name, Kingston",
+            condolences: [
+                {
+                    author: "Sample Friend",
+                    date: "2 days ago",
+                    message: "Our heartfelt condolences to the family. They will be deeply missed."
+                }
+            ]
+        }
+    ];
+    
+    // Load obituaries on page load
+    window.onload = function() {
+        loadObituraries();
+    };
+    
+    function loadObituraries() {
+        const grid = document.getElementById('obituariesGrid');
+        
+        if (obituaries.length === 0) {
+            grid.innerHTML = `
+                <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+                    <p style="font-size: 1.2rem; color: var(--text-light);">No obituaries to display at this time.</p>
+                    <p style="margin-top: 1rem;">Contact us at <a href="tel:+18763261263" style="color: var(--accent); font-weight: 600;">876-326-1263</a> for funeral arrangements.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        grid.innerHTML = obituaries.map(obit => `
+            <div class="obituary-card" onclick="openModal(${obit.id})">
+                <div class="obituary-image">
+                    ${obit.photo ? `<img src="${obit.photo}" alt="${obit.name}">` : '<div class="placeholder-icon">🕊️</div>'}
+                </div>
+                <div class="obituary-content">
+                    <h3 class="obituary-name">${obit.name}</h3>
+                    <p class="obituary-dates">${obit.birthDate} - ${obit.deathDate}</p>
+                    <p class="obituary-excerpt">${obit.excerpt}</p>
+                    <div class="obituary-footer">
+                        <span class="service-date">📅 ${obit.serviceDate}</span>
+                        <a href="#" class="view-full" onclick="event.preventDefault(); openModal(${obit.id})">View Full Tribute →</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    function openModal(id) {
+        const obit = obituaries.find(o => o.id === id);
+        if (!obit) return;
+        
+        // Populate modal
+        const modal = document.getElementById('obituaryModal');
+        document.getElementById('modalName').textContent = obit.name;
+        document.getElementById('modalDates').textContent = `${obit.birthDate} - ${obit.deathDate}`;
+        document.getElementById('modalStory').textContent = obit.fullStory;
+        
+        // Photo
+        const photoContainer = document.getElementById('modalPhoto');
+        if (obit.photo) {
+            photoContainer.innerHTML = `<img src="${obit.photo}" alt="${obit.name}">`;
+        } else {
+            photoContainer.innerHTML = '<div class="modal-photo-placeholder">🕊️</div>';
+        }
+        
+        // Service info
+        document.getElementById('serviceInfo').innerHTML = `
+            <div class="info-item">
+                <span class="info-icon">📅</span>
+                <div><strong>Date:</strong><br>${obit.serviceDate}</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">🕐</span>
+                <div><strong>Time:</strong><br>${obit.serviceTime}</div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div><strong>Location:</strong><br>${obit.serviceLocation}</div>
+            </div>
+        `;
+        
+        // Setup share buttons
+        const url = encodeURIComponent(window.location.href + '?obit=' + id);
+        const text = encodeURIComponent(`In memory of ${obit.name} (${obit.birthDate} - ${obit.deathDate})`);
+        
+        document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+        document.getElementById('shareWhatsApp').href = `https://wa.me/?text=${text}%20${url}`;
+        document.getElementById('shareEmail').href = `mailto:?subject=${text}&body=View%20the%20memorial%20at%20${url}`;
+        
+        // Load condolences
+        loadCondolences(obit.condolences);
+        
+        // Show modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('obituaryModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    function loadCondolences(condolences) {
+        const list = document.getElementById('condolencesList');
+        
+        if (!condolences || condolences.length ===
