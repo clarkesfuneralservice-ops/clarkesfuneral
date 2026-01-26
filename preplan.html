@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Plan Your Funeral | Clarke's Funeral Services | Kingston, Jamaica</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pre-plan your funeral with Clarke's Funeral Services in Kingston, Jamaica. Lock in today's prices, ease the burden on loved ones, and ensure your wishes are honored. Free consultation: 876-326-1263">
+    <meta name="keywords" content="funeral pre-planning Jamaica, pre-arrange funeral Kingston, funeral planning ahead, funeral insurance Jamaica, pre-need funeral services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #8b7355;
+            --accent: #c9a86a;
+            --light: #f5f5f0;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --success: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            height: 100px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #d4b57a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 140px;
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .benefit-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .benefit-card p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+        
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .step:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateX(10px);
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+        
+        .step-content p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* What You Can Plan */
+        .what-to-plan {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+        
+        .plan-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .plan-item {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .plan-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .plan-item h4 span {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        .plan-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            padding-left: 2.25rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .btn-white:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        /* Pre-Planning Form */
+        .preplanning-form-section {
+            padding: 5rem 5%;
+            background: var(--light);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .form-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .form-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .form-intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(201, 168, 106, 0.2);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+            display: block;
+        }
+        
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+            display: block;
+        }
+        
+        .privacy-note {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--light);
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: rgba(201, 168, 106, 0.1);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            nav > div > div:last-child {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                grid-template-columns: 60px 1fr;
+                gap: 1rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="logo.png" alt="Clarke's Funeral Services Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="preplanning.html">Pre-Planning</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <a href="tel:+18763261263" class="btn btn-primary">Call 24/7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+            <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Plan Ahead, Find Peace of Mind</h1>
+            <p>Pre-planning your funeral is one of the most thoughtful gifts you can give your family. Lock in today's prices, ensure your wishes are honored, and ease the emotional and financial burden on your loved ones.</p>
+            <div class="cta-buttons">
+                <a href="#preplanning-form" class="btn btn-primary">Start Planning Today</a>
+                <a href="tel:+18763261263" class="btn btn-white">📞 Speak with Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="section-header">
+            <h2>Why Pre-Plan Your Funeral?</h2>
+            <div class="accent-line"></div>
+            <p>Pre-planning offers peace of mind and significant benefits for you and your family</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Lock In Current Prices</h3>
+                <p>Funeral costs rise every year. By pre-planning, you lock in today's prices and protect your family from future price increases.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">❤️</div>
+                <h3>Ease Family Burden</h3>
+                <p>Your loved ones won't have to make difficult decisions during an emotional time. Everything is already arranged according to your wishes.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📝</div>
+                <h3>Your Wishes Honored</h3>
+                <p>Choose exactly how you want to be remembered. From service details to burial location, you control every aspect.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💳</div>
+                <h3>Flexible Payment</h3>
+                <p>Spread payments over time instead of burdening your family with a large expense all at once.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h3>Protection & Security</h3>
+                <p>Your arrangements are guaranteed, documented, and protected. Your family will have nothing to worry about.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🕊️</div>
+                <h3>Peace of Mind</h3>
+                <p>Know that everything is taken care of. Live fully, knowing your final arrangements reflect your values and wishes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="section-header">
+            <h2>How Pre-Planning Works</h2>
+            <div class="accent-line"></div>
+            <p>Simple, straightforward, and stress-free</p>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Free Consultation</h3>
+                    <p>Meet with our compassionate team (in person, by phone, or WhatsApp) to discuss your wishes, preferences, and budget. No pressure, just guidance.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Choose Your Services</h3>
+                    <p>Select from our cremation or burial packages. Customize every detail from the service location to music, flowers, and readings.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Review & Document</h3>
+                    <p>We'll create a detailed plan outlining all your choices. Review everything with your family if you wish, or keep it private.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Secure Your Plan</h3>
+                    <p>Choose a payment option that works for you—pay in full, set up a payment plan, or assign insurance. Your plan is locked in and protected.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Live with Peace of Mind</h3>
+                    <p>Your arrangements are complete. We keep everything on file, and you can update your plan anytime. Your family will be fully supported when the time comes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Can Plan -->
+    <section class="what-to-plan">
+        <div class="section-header">
+            <h2>What You Can Pre-Plan</h2>
+            <div class="accent-line"></div>
+            <p>Every detail can be arranged according to your preferences</p>
+        </div>
+        <div class="plan-grid">
+            <div class="plan-item">
+                <h4><span>⚰️</span> Burial or Cremation</h4>
+                <p>Choose traditional burial, cremation, or memorial service</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>🏛️</span> Service Location</h4>
+                <p>Church, funeral home, graveside, or other venue</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>🎵</span> Music & Readings</h4>
+                <p>Select hymns, songs, scriptures, and speakers</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>🌸</span> Flowers & Decorations</h4>
+                <p>Choose casket pieces, wreaths, and arrangements</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>📄</span> Programs & Notices</h4>
+                <p>Design funeral programs and death notices</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>📸</span> Photos & Tributes</h4>
+                <p>Select photos and create video tributes</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>🚐</span> Transportation</h4>
+                <p>Hearse, family vehicles, and procession details</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>🪦</span> Cemetery & Burial</h4>
+                <p>Plot selection, vault, headstone preferences</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>📱</span> Live Streaming</h4>
+                <p>Share service with family and friends worldwide</p>
+            </div>
+            <div class="plan-item">
+                <h4><span>🎗️</span> Personal Touches</h4>
+                <p>Special requests, memorabilia, charitable donations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Planning Form -->
+    <section id="preplanning-form" class="preplanning-form-section">
+        <div class="form-container">
+            <div class="form-intro">
+                <h3>Request Your Free Pre-Planning Consultation</h3>
+                <p>Fill out this form and we'll contact you within 24 hours to schedule your no-obligation consultation.</p>
+            </div>
+            
+            <div id="formMessage" class="form-message"></div>
+            
+            <form id="preplanForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="planFor">Planning for: *</label>
+                    <select id="planFor" name="planFor" required>
+                        <option value="">Select...</option>
+                        <option value="myself">Myself</option>
+                        <option value="spouse">My Spouse</option>
+                        <option value="parent">Parent</option>
+                        <option value="family-member">Other Family Member</option>
+                        <option value="both">Myself and Spouse</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preference">Service Preference:</label>
+                    <select id="preference" name="preference">
+                        <option value="">Not sure yet</option>
+                        <option value="cremation">Cremation</option>
+                        <option value="burial">Traditional Burial</option>
+                        <option value="memorial">Memorial Service</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactMethod">Preferred Contact Method: *</label
