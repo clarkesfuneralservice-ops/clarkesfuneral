@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Clarke's Funeral Services | Professional Funeral Home in Kingston, Jamaica | 24/7 Support</title>
     
     <!-- SEO Meta Tags -->
@@ -79,6 +79,7 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            max-width: 100vw;
         }
         
         h1, h2, h3, h4 {
@@ -91,11 +92,13 @@
             position: fixed;
             top: 0;
             width: 100%;
+            max-width: 100vw;
             background: rgba(26, 26, 46, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 5%;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-sizing: border-box;
         }
         
         .nav-container {
@@ -115,6 +118,7 @@
         .logo-container img {
             height: 100px;
             width: auto;
+            max-width: 200px;
         }
         
         .nav-links {
@@ -140,6 +144,9 @@
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
+            padding: 10px;
+            -webkit-tap-highlight-color: transparent;
+            z-index: 1001;
         }
         
         .hamburger span {
@@ -147,6 +154,7 @@
             height: 3px;
             background: var(--white);
             transition: all 0.3s;
+            display: block;
         }
         
         .hamburger.active span:nth-child(1) {
@@ -801,20 +809,53 @@
                 display: flex !important;
             }
             
+            nav {
+                padding: 1rem 3%;
+            }
+            
+            .nav-container {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .logo-container img {
+                height: 60px;
+                max-width: 150px;
+            }
+            
+            .hero {
+                padding: 3rem 5%;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                line-height: 1.2;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .hero p {
                 font-size: 1rem;
             }
             
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            section {
+                padding: 3rem 5%;
+            }
+            
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .contact-grid,
@@ -829,6 +870,15 @@
             
             .about-values {
                 grid-template-columns: 1fr;
+            }
+            
+            .trust-items {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .trust-number {
+                font-size: 2rem;
             }
         }
     </style>
@@ -850,7 +900,7 @@
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -864,16 +914,17 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
-            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
-            <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
-            <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
-            <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
-            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="preplanning.html">Pre-Planning</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="obituaries.html">Obituaries</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:+18763261263">📞 Call Now</a></li>
+            <li><a href="https://wa.me/18763261263">💬 WhatsApp</a></li>
         </ul>
     </div>
 
