@@ -486,7 +486,6 @@
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="preplanning.html">Pre-Planning</a></li>
-                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
@@ -509,7 +508,6 @@
             <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
             <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
             <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
-            <li><a href="faq.html" onclick="toggleMenu()">FAQ</a></li>
             <li><a href="index.html#testimonials" onclick="toggleMenu()">Testimonials</a></li>
             <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
             <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
@@ -895,13 +893,41 @@
     </footer>
     
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle - IMPROVED
         function toggleMenu() {
+            console.log('Menu toggle clicked');
             const hamburger = document.querySelector('.hamburger');
             const mobileMenu = document.getElementById('mobileMenu');
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
+            
+            if (hamburger && mobileMenu) {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                console.log('Menu toggled, active:', mobileMenu.classList.contains('active'));
+            } else {
+                console.error('Menu elements not found');
+            }
         }
+        
+        // Make toggleMenu available globally
+        window.toggleMenu = toggleMenu;
+        
+        // Add event listeners for better mobile support
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            if (hamburger) {
+                hamburger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+                
+                hamburger.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+            }
+        });
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
@@ -909,8 +935,8 @@
             const mobileMenu = document.getElementById('mobileMenu');
             const nav = document.querySelector('nav');
             
-            if (!nav.contains(event.target) && mobileMenu.classList.contains('active')) {
-                hamburger.classList.remove('active');
+            if (nav && !nav.contains(event.target) && mobileMenu && mobileMenu.classList.contains('active')) {
+                if (hamburger) hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
             }
         });
