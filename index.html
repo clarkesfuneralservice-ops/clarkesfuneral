@@ -148,18 +148,30 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 5px;
-            padding: 10px;
-            -webkit-tap-highlight-color: transparent;
+            gap: 6px;
+            padding: 15px;
+            background: rgba(201, 168, 106, 0.2);
+            border-radius: 8px;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            position: relative;
             z-index: 1001;
+            min-width: 50px;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
         }
         
         .hamburger span {
-            width: 30px;
+            width: 25px;
             height: 3px;
             background: var(--white);
             transition: all 0.3s;
             display: block;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active {
+            background: var(--accent);
         }
         
         .hamburger.active span:nth-child(1) {
@@ -180,14 +192,27 @@
             top: 120px;
             left: 0;
             right: 0;
+            bottom: 0;
             background: rgba(26, 26, 46, 0.98);
             backdrop-filter: blur(10px);
             padding: 2rem;
             z-index: 999;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow-y: auto;
+            animation: slideDown 0.3s ease;
         }
         
-        .mobile-menu.active {
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .mobile-menu.show {
             display: block;
         }
         
@@ -202,15 +227,20 @@
         .mobile-menu ul li a {
             color: var(--white);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 500;
             display: block;
-            padding: 0.5rem;
-            transition: color 0.3s;
+            padding: 1rem;
+            transition: all 0.3s;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
         }
         
-        .mobile-menu ul li a:hover {
+        .mobile-menu ul li a:hover,
+        .mobile-menu ul li a:active {
             color: var(--accent);
+            background: rgba(201, 168, 106, 0.2);
+            transform: translateX(10px);
         }
         
         .nav-cta {
@@ -829,6 +859,7 @@
             
             .hamburger {
                 display: flex !important;
+                background: var(--accent);
             }
             
             nav {
@@ -1193,25 +1224,25 @@
             <div class="accent-line"></div>
             <p>Real experiences from families we've had the honor to serve</p>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Clarke's provided exceptional service during the most difficult time of our lives. They handled everything with professionalism and genuine care. We couldn't have asked for better support."</p>
-                <div class="testimonial-author">Jennifer M.</div>
-                <div class="testimonial-location">Kingston, Jamaica</div>
+        
+        <!-- Google Reviews Header -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: var(--white); padding: 1.5rem 3rem; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" style="height: 24px;">
+                <div style="border-left: 2px solid var(--light); padding-left: 1rem;">
+                    <div style="font-size: 2rem; color: var(--accent); font-weight: 700; font-family: 'Playfair Display', serif;">5.0 ★★★★★</div>
+                    <div style="font-size: 0.9rem; color: var(--text-light);">Based on Google Reviews</div>
+                </div>
+                <a href="https://g.page/r/YOUR_PLACE_ID/review" target="_blank" class="btn btn-primary" style="margin-left: 1rem;">Leave a Review</a>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"From start to finish, the team was compassionate and respectful. They made a very difficult process much easier to navigate. Highly recommend their services."</p>
-                <div class="testimonial-author">Michael P.</div>
-                <div class="testimonial-location">St. Andrew, Jamaica</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"The international repatriation service was seamless. Clarke's handled all the details and kept us informed every step of the way. Truly professional and caring."</p>
-                <div class="testimonial-author">Sandra L.</div>
-                <div class="testimonial-location">Portmore, Jamaica</div>
-            </div>
+        </div>
+        
+        <div class="testimonials-grid" id="reviewsContainer">
+            <!-- Reviews will be loaded here -->
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://www.google.com/search?q=Clarke%27s+Funeral+Services+Kingston+Jamaica" target="_blank" class="btn btn-primary">Read All Reviews on Google</a>
         </div>
     </section>
 
