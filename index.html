@@ -151,28 +151,38 @@
             flex-direction: column;
             gap: 6px;
             background: var(--accent);
-            border: none;
+            border: 3px solid var(--primary);
             border-radius: 8px;
-            padding: 12px 15px;
+            padding: 15px 18px;
             cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(201, 168, 106, 0.5);
             position: relative;
             z-index: 10001;
             transition: all 0.3s ease;
+            min-width: 60px;
+            min-height: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hamburger:hover {
+            background: #d4b57a;
+            transform: scale(1.05);
         }
         
         .hamburger:active {
             transform: scale(0.95);
-            background: #d4b57a;
+            background: var(--secondary);
         }
         
         .hamburger span {
-            width: 28px;
-            height: 3px;
+            width: 30px;
+            height: 4px;
             background: var(--primary);
             display: block;
             transition: all 0.3s ease;
             border-radius: 3px;
+            pointer-events: none;
         }
         
         .hamburger.open span:nth-child(1) {
