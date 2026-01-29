@@ -892,54 +892,43 @@
         <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. All prices subject to change.</p>
     </footer>
     
-    <script>
-        // Mobile menu toggle - IMPROVED
-        function toggleMenu() {
-            console.log('Menu toggle clicked');
-            const hamburger = document.querySelector('.hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
+      <script>
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+            // Remove onclick attribute and use event listener instead
+            hamburger.removeAttribute('onclick');
             
-            if (hamburger && mobileMenu) {
+            // Toggle menu when clicking hamburger
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 hamburger.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
-                console.log('Menu toggled, active:', mobileMenu.classList.contains('active'));
-            } else {
-                console.error('Menu elements not found');
-            }
-        }
-        
-        // Make toggleMenu available globally
-        window.toggleMenu = toggleMenu;
-        
-        // Add event listeners for better mobile support
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            if (hamburger) {
-                hamburger.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleMenu();
-                });
-                
-                hamburger.addEventListener('touchend', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleMenu();
-                });
-            }
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const hamburger = document.querySelector('.hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const nav = document.querySelector('nav');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
             
-            if (nav && !nav.contains(event.target) && mobileMenu && mobileMenu.classList.contains('active')) {
-                if (hamburger) hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
+            // Close menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileMenu.classList.contains('active') && 
+                    !mobileMenu.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
     </script>
-</body>
-</html>
