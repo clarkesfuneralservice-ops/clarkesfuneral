@@ -501,19 +501,46 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
-            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
-            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
-            <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
-            <li><a href="index.html#testimonials" onclick="toggleMenu()">Testimonials</a></li>
-            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
-            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
-            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
-        </ul>
-    </div>
+    <script>
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+            // Remove onclick attribute and use event listener instead
+            hamburger.removeAttribute('onclick');
+            
+            // Toggle menu when clicking hamburger
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileMenu.classList.contains('active') && 
+                    !mobileMenu.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+    </script>
 
     <!-- Hero Section -->
     <section class="pricing-hero">
