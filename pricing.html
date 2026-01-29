@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing & Packages | Clarke's Funeral Services | Kingston, Jamaica</title>
-    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Transparent pricing for funeral services in Kingston, Jamaica. Cremation packages from $190,000, Burial packages from $455,000. Payment plans available. Call 876-326-1263">
     <meta name="keywords" content="funeral prices Jamaica, cremation cost Kingston, burial packages Jamaica, affordable funeral services, funeral payment plans Kingston">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
-    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/pricing.html">
-    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         :root {
             --primary: #1a1a2e;
             --secondary: #8b7355;
@@ -35,19 +29,16 @@
             --text-light: #666666;
             --success: #10b981;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
         }
-        
         /* Navigation */
         nav {
             position: fixed;
@@ -59,7 +50,6 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -67,60 +57,49 @@
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo-container img {
             height: 100px;
             width: auto;
         }
-        
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
         .nav-links a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
         .nav-links a:hover {
             color: var(--accent);
         }
-        
         .nav-cta {
             display: flex;
             gap: 1rem;
         }
-        
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
         }
-        
         .hamburger span {
             width: 30px;
             height: 3px;
             background: var(--white);
             transition: all 0.3s;
         }
-        
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
-        
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-        
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
-        
         .mobile-menu {
             display: none;
             position: fixed;
@@ -133,19 +112,15 @@
             z-index: 999;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        
         .mobile-menu.active {
             display: block;
         }
-        
         .mobile-menu ul {
             list-style: none;
         }
-        
         .mobile-menu ul li {
             margin-bottom: 1.5rem;
         }
-        
         .mobile-menu ul li a {
             color: var(--white);
             text-decoration: none;
@@ -155,11 +130,9 @@
             padding: 0.5rem;
             transition: color 0.3s;
         }
-        
         .mobile-menu ul li a:hover {
             color: var(--accent);
         }
-        
         .btn {
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -173,18 +146,15 @@
             border: none;
             cursor: pointer;
         }
-        
         .btn-primary {
             background: var(--accent);
             color: var(--primary);
         }
-        
         .btn-primary:hover {
             background: #d4b57a;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
         }
-        
         /* Hero */
         .pricing-hero {
             margin-top: 140px;
@@ -196,20 +166,17 @@
             text-align: center;
             color: var(--white);
         }
-        
         .pricing-hero h1 {
             font-size: 3.5rem;
             color: var(--white);
             margin-bottom: 1rem;
         }
-        
         .pricing-hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 2rem;
             color: rgba(255, 255, 255, 0.9);
         }
-        
         /* Info Bar */
         .info-bar {
             background: var(--accent);
@@ -217,7 +184,6 @@
             text-align: center;
             color: var(--primary);
         }
-        
         .info-bar-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -227,46 +193,38 @@
             flex-wrap: wrap;
             gap: 2rem;
         }
-        
         .info-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-weight: 600;
         }
-        
         /* Package Categories */
         .package-section {
             padding: 4rem 5%;
         }
-        
         .package-section:nth-child(even) {
             background: var(--light);
         }
-        
         .section-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 3rem;
         }
-        
         .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-        
         .section-header p {
             font-size: 1.1rem;
             color: var(--text-light);
         }
-        
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--accent);
             margin: 1rem auto;
         }
-        
         /* Package Grid */
         .packages-grid {
             max-width: 1400px;
@@ -275,7 +233,6 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
-        
         .package-card {
             background: var(--white);
             border-radius: 20px;
@@ -284,18 +241,15 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
-        
         .package-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             border-color: var(--accent);
         }
-        
         .package-card.featured {
             border-color: var(--accent);
             position: relative;
         }
-        
         .package-card.featured::before {
             content: 'MOST POPULAR';
             position: absolute;
@@ -309,45 +263,37 @@
             font-size: 0.75rem;
             letter-spacing: 1px;
         }
-        
         .package-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 2rem;
             text-align: center;
         }
-        
         .package-name {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
-        
         .package-price {
             font-size: 3rem;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
             color: var(--accent);
         }
-        
         .package-body {
             padding: 2rem;
         }
-        
         .package-includes {
             margin-bottom: 2rem;
         }
-        
         .package-includes h4 {
             font-size: 1.1rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
-        
         .package-features {
             list-style: none;
         }
-        
         .package-features li {
             padding: 0.75rem 0;
             border-bottom: 1px solid var(--light);
@@ -357,11 +303,9 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
-        
         .package-features li:last-child {
             border-bottom: none;
         }
-        
         .package-features li::before {
             content: '✓';
             color: var(--success);
@@ -369,12 +313,10 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
-        
         .package-cta {
             text-align: center;
             padding-top: 1rem;
         }
-        
         /* Payment Info */
         .payment-info {
             background: var(--primary);
@@ -382,13 +324,11 @@
             padding: 4rem 5%;
             text-align: center;
         }
-        
         .payment-info h2 {
             color: var(--white);
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
-        
         .payment-options {
             max-width: 1000px;
             margin: 0 auto;
@@ -397,49 +337,41 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        
         .payment-option {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(10px);
         }
-        
         .payment-option h3 {
             color: var(--accent);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        
         .payment-option p {
             color: rgba(255, 255, 255, 0.9);
         }
-        
         /* CTA Section */
         .cta-section {
             padding: 4rem 5%;
             background: var(--light);
             text-align: center;
         }
-        
         .cta-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-        
         .cta-section p {
             font-size: 1.2rem;
             color: var(--text-light);
             margin-bottom: 2rem;
         }
-        
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
         /* Footer */
         footer {
             background: var(--primary);
@@ -447,26 +379,21 @@
             padding: 2rem 5%;
             text-align: center;
         }
-        
         footer a {
             color: var(--accent);
             text-decoration: none;
         }
-        
         /* Responsive */
         @media (max-width: 768px) {
             .pricing-hero h1 {
                 font-size: 2.5rem;
             }
-            
             .package-price {
                 font-size: 2.5rem;
             }
-            
             .packages-grid {
                 grid-template-columns: 1fr;
             }
-            
             .nav-links {
                 display: none;
             }
@@ -489,7 +416,7 @@
                 <li><a href="index.html#testimonials">Testimonials</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -499,55 +426,25 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile Menu -->
-    <script>
-        // Mobile menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        if (hamburger && mobileMenu) {
-            // Remove onclick attribute and use event listener instead
-            hamburger.removeAttribute('onclick');
-            
-            // Toggle menu when clicking hamburger
-            hamburger.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                hamburger.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-            });
-            
-            // Close menu when clicking on a link
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (mobileMenu.classList.contains('active') && 
-                    !mobileMenu.contains(e.target) && 
-                    !hamburger.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-    </script>
-
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="pricing.html" onclick="toggleMenu()">Pricing</a></li>
+            <li><a href="preplanning.html" onclick="toggleMenu()">Pre-Planning</a></li>
+            <li><a href="index.html#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="tel:+18763261263" onclick="toggleMenu()">📞 Call Now</a></li>
+            <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
+        </ul>
+    </div>
     <!-- Hero Section -->
     <section class="pricing-hero">
         <h1>Transparent Pricing for Every Family</h1>
         <p>Honest, affordable funeral services with no hidden fees. We believe every family deserves dignity and respect, regardless of budget.</p>
     </section>
-
     <!-- Info Bar -->
     <div class="info-bar">
         <div class="info-bar-content">
@@ -565,7 +462,6 @@
             </div>
         </div>
     </div>
-
     <!-- Cremation Packages -->
     <section class="package-section">
         <div class="section-header">
@@ -600,7 +496,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Simple Cremation -->
             <div class="package-card">
                 <div class="package-header">
@@ -629,7 +524,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Standard Cremation -->
             <div class="package-card featured">
                 <div class="package-header">
@@ -662,7 +556,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Premium Cremation -->
             <div class="package-card">
                 <div class="package-header">
@@ -700,7 +593,6 @@
             </div>
         </div>
     </section>
-
     <!-- Memorial Service Package -->
     <section class="package-section">
         <div class="section-header">
@@ -742,7 +634,6 @@
             </div>
         </div>
     </section>
-
     <!-- Burial Packages -->
     <section class="package-section">
         <div class="section-header">
@@ -781,7 +672,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Simple Burial -->
             <div class="package-card">
                 <div class="package-header">
@@ -813,7 +703,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Standard Burial -->
             <div class="package-card featured">
                 <div class="package-header">
@@ -846,7 +735,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Premium Burial -->
             <div class="package-card">
                 <div class="package-header">
@@ -882,7 +770,6 @@
             </div>
         </div>
     </section>
-
     <!-- Payment Information -->
     <section class="payment-info">
         <h2>Flexible Payment Options</h2>
@@ -902,7 +789,6 @@
             </div>
         </div>
     </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Need Help Choosing a Package?</h2>
@@ -912,22 +798,17 @@
             <a href="https://wa.me/18763261263" class="btn btn-primary">💬 WhatsApp Us</a>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
         <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. All prices subject to change.</p>
     </footer>
-    
-      <script>
+    <script>
         // Mobile menu functionality
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         
         if (hamburger && mobileMenu) {
-            // Remove onclick attribute and use event listener instead
-            hamburger.removeAttribute('onclick');
-            
             // Toggle menu when clicking hamburger
             hamburger.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -959,3 +840,5 @@
             });
         }
     </script>
+</body>
+</html>
