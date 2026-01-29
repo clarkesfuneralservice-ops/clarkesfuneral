@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre-Plan Your Funeral | Clarke's Funeral Services | Kingston, Jamaica</title>
-    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Pre-plan your funeral with Clarke's Funeral Services in Kingston, Jamaica. Lock in today's prices, ease the burden on loved ones, and ensure your wishes are honored. Free consultation: 876-326-1263">
     <meta name="keywords" content="funeral pre-planning Jamaica, pre-arrange funeral Kingston, funeral planning ahead, funeral insurance Jamaica, pre-need funeral services">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
-    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/preplanning.html">
-    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         :root {
             --primary: #1a1a2e;
             --secondary: #8b7355;
@@ -35,19 +29,16 @@
             --text-light: #666666;
             --success: #10b981;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
         }
-        
         /* Navigation */
         nav {
             position: fixed;
@@ -59,7 +50,6 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -67,60 +57,49 @@
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo-container img {
             height: 100px;
             width: auto;
         }
-        
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
         .nav-links a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
         .nav-links a:hover {
             color: var(--accent);
         }
-        
         .nav-cta {
             display: flex;
             gap: 1rem;
         }
-        
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
         }
-        
         .hamburger span {
             width: 30px;
             height: 3px;
             background: var(--white);
             transition: all 0.3s;
         }
-        
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
-        
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-        
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
-        
         .mobile-menu {
             display: none;
             position: fixed;
@@ -133,19 +112,15 @@
             z-index: 999;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        
         .mobile-menu.active {
             display: block;
         }
-        
         .mobile-menu ul {
             list-style: none;
         }
-        
         .mobile-menu ul li {
             margin-bottom: 1.5rem;
         }
-        
         .mobile-menu ul li a {
             color: var(--white);
             text-decoration: none;
@@ -155,11 +130,9 @@
             padding: 0.5rem;
             transition: color 0.3s;
         }
-        
         .mobile-menu ul li a:hover {
             color: var(--accent);
         }
-        
         .btn {
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -173,29 +146,24 @@
             border: none;
             cursor: pointer;
         }
-        
         .btn-primary {
             background: var(--accent);
             color: var(--primary);
         }
-        
         .btn-primary:hover {
             background: #d4b57a;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
         }
-        
         .btn-secondary {
             background: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
         }
-        
         .btn-secondary:hover {
             background: var(--primary);
             color: var(--white);
         }
-        
         /* Hero */
         .hero {
             margin-top: 140px;
@@ -204,14 +172,12 @@
             text-align: center;
             color: var(--white);
         }
-        
         .hero h1 {
             font-size: 3.5rem;
             color: var(--white);
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
-        
         .hero p {
             font-size: 1.3rem;
             max-width: 800px;
@@ -219,36 +185,30 @@
             color: rgba(255, 255, 255, 0.95);
             line-height: 1.8;
         }
-        
         /* Benefits Section */
         .benefits {
             padding: 5rem 5%;
             background: var(--white);
         }
-        
         .section-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 4rem;
         }
-        
         .section-header h2 {
             font-size: 2.8rem;
             margin-bottom: 1rem;
         }
-        
         .section-header p {
             font-size: 1.2rem;
             color: var(--text-light);
         }
-        
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--accent);
             margin: 1rem auto;
         }
-        
         .benefits-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -256,7 +216,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
-        
         .benefit-card {
             background: var(--light);
             padding: 2.5rem;
@@ -265,42 +224,35 @@
             transition: all 0.3s;
             border: 2px solid transparent;
         }
-        
         .benefit-card:hover {
             transform: translateY(-10px);
             border-color: var(--accent);
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
-        
         .benefit-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             line-height: 1;
         }
-        
         .benefit-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
-        
         .benefit-card p {
             font-size: 1.05rem;
             color: var(--text-light);
             line-height: 1.8;
         }
-        
         /* How It Works */
         .how-it-works {
             padding: 5rem 5%;
             background: var(--light);
         }
-        
         .steps-container {
             max-width: 1000px;
             margin: 0 auto;
         }
-        
         .step {
             display: grid;
             grid-template-columns: 80px 1fr;
@@ -312,12 +264,10 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.06);
             transition: all 0.3s;
         }
-        
         .step:hover {
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transform: translateX(10px);
         }
-        
         .step-number {
             width: 80px;
             height: 80px;
@@ -332,25 +282,21 @@
             font-family: 'Playfair Display', serif;
             flex-shrink: 0;
         }
-        
         .step-content h3 {
             font-size: 1.6rem;
             margin-bottom: 0.75rem;
             color: var(--primary);
         }
-        
         .step-content p {
             font-size: 1.05rem;
             color: var(--text-light);
             line-height: 1.8;
         }
-        
         /* What You Can Plan */
         .what-to-plan {
             padding: 5rem 5%;
             background: var(--white);
         }
-        
         .plan-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -358,14 +304,12 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-        
         .plan-item {
             background: var(--light);
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid var(--accent);
         }
-        
         .plan-item h4 {
             font-size: 1.2rem;
             margin-bottom: 0.75rem;
@@ -374,19 +318,16 @@
             align-items: center;
             gap: 0.75rem;
         }
-        
         .plan-item h4 span {
             font-size: 1.5rem;
             line-height: 1;
         }
-        
         .plan-item p {
             font-size: 0.95rem;
             color: var(--text-light);
             margin: 0;
             padding-left: 2.25rem;
         }
-        
         /* CTA Section */
         .cta-section {
             padding: 5rem 5%;
@@ -394,13 +335,11 @@
             text-align: center;
             color: var(--white);
         }
-        
         .cta-section h2 {
             font-size: 2.8rem;
             color: var(--white);
             margin-bottom: 1.5rem;
         }
-        
         .cta-section p {
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
@@ -409,30 +348,25 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
         .btn-white {
             background: var(--white);
             color: var(--primary);
         }
-        
         .btn-white:hover {
             background: var(--accent);
             color: var(--primary);
         }
-        
         /* Pre-Planning Form */
         .preplanning-form-section {
             padding: 5rem 5%;
             background: var(--light);
         }
-        
         .form-container {
             max-width: 800px;
             margin: 0 auto;
@@ -441,27 +375,22 @@
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
-        
         .form-intro {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
         .form-intro h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
-        
         .form-intro p {
             font-size: 1.1rem;
             color: var(--text-light);
         }
-        
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
@@ -469,7 +398,6 @@
             color: var(--primary);
             font-size: 1rem;
         }
-        
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -481,46 +409,39 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-        
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
             border-color: var(--accent);
         }
-        
         .form-group textarea {
             min-height: 120px;
             resize: vertical;
         }
-        
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
-        
         .form-message {
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1rem;
             display: none;
         }
-        
         .form-message.success {
             background: #d1fae5;
             color: #065f46;
             border: 1px solid #10b981;
             display: block;
         }
-        
         .form-message.error {
             background: #fee2e2;
             color: #991b1b;
             border: 1px solid #ef4444;
             display: block;
         }
-        
         .privacy-note {
             background: var(--light);
             padding: 1.5rem;
@@ -530,25 +451,21 @@
             color: var(--text-light);
             text-align: center;
         }
-        
         /* FAQ Section */
         .faq-section {
             padding: 5rem 5%;
             background: var(--white);
         }
-        
         .faq-container {
             max-width: 900px;
             margin: 0 auto;
         }
-        
         .faq-item {
             background: var(--light);
             margin-bottom: 1.5rem;
             border-radius: 12px;
             overflow: hidden;
         }
-        
         .faq-question {
             padding: 1.5rem 2rem;
             cursor: pointer;
@@ -560,38 +477,31 @@
             font-size: 1.1rem;
             transition: background 0.3s;
         }
-        
         .faq-question:hover {
             background: rgba(201, 168, 106, 0.1);
         }
-        
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
             color: var(--accent);
             transition: transform 0.3s;
         }
-        
         .faq-question.active::after {
             transform: rotate(45deg);
         }
-        
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-        
         .faq-answer.active {
             max-height: 500px;
         }
-        
         .faq-answer-content {
             padding: 0 2rem 1.5rem;
             color: var(--text-light);
             line-height: 1.8;
         }
-        
         /* Footer */
         footer {
             background: var(--primary);
@@ -599,43 +509,34 @@
             padding: 2rem 5%;
             text-align: center;
         }
-        
         footer a {
             color: var(--accent);
             text-decoration: none;
         }
-        
         /* Responsive */
         @media (max-width: 968px) {
             .nav-links {
                 display: none !important;
             }
-            
             .nav-container > div:last-child {
                 display: none !important;
             }
-            
             .hamburger {
                 display: flex !important;
             }
-            
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
             .section-header h2 {
                 font-size: 2rem;
             }
-            
             .form-row {
                 grid-template-columns: 1fr;
             }
-            
             .step {
                 grid-template-columns: 60px 1fr;
                 gap: 1rem;
             }
-            
             .step-number {
                 width: 60px;
                 height: 60px;
@@ -659,7 +560,7 @@
                 <li><a href="preplanning.html">Pre-Planning</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -669,7 +570,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
@@ -683,7 +583,6 @@
             <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
         </ul>
     </div>
-
     <!-- Hero Section -->
     <section class="hero">
         <div>
@@ -695,7 +594,6 @@
             </div>
         </div>
     </section>
-
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="section-header">
@@ -736,7 +634,6 @@
             </div>
         </div>
     </section>
-
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="section-header">
@@ -782,7 +679,6 @@
             </div>
         </div>
     </section>
-
     <!-- What You Can Plan -->
     <section class="what-to-plan">
         <div class="section-header">
@@ -833,7 +729,6 @@
             </div>
         </div>
     </section>
-
     <!-- Pre-Planning Form -->
     <section id="preplanning-form" class="preplanning-form-section">
         <div class="form-container">
@@ -841,9 +736,7 @@
                 <h3>Request Your Free Pre-Planning Consultation</h3>
                 <p>Fill out this form and we'll contact you within 24 hours to schedule your no-obligation consultation.</p>
             </div>
-            
             <div id="formMessage" class="form-message"></div>
-            
             <form id="preplanForm">
                 <div class="form-row">
                     <div class="form-group">
@@ -855,7 +748,6 @@
                         <input type="text" id="lastName" name="lastName" required>
                     </div>
                 </div>
-                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
@@ -866,7 +758,6 @@
                         <input type="email" id="email" name="email">
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label for="planFor">Planning for: *</label>
                     <select id="planFor" name="planFor" required>
@@ -878,7 +769,6 @@
                         <option value="both">Myself and Spouse</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
                     <label for="preference">Service Preference:</label>
                     <select id="preference" name="preference">
@@ -888,6 +778,107 @@
                         <option value="memorial">Memorial Service</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
-                    <label for="contactMethod">Preferred Contact Method: *</label
+                    <label for="contactMethod">Preferred Contact Method: *</label                    <label for="contactMethod">Preferred Contact Method: *</label>
+                    <select id="contactMethod" name="contactMethod" required>
+                        <option value="">Select...</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information or Questions:</label>
+                    <textarea id="message" name="message" placeholder="Tell us anything else we should know..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request Free Consultation</button>
+            </form>
+            <div class="privacy-note">
+                🔒 Your information is completely confidential and will never be shared. We'll contact you within 24 hours to schedule your no-obligation consultation.
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
+        <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. Serving families with dignity since 2019.</p>
+    </footer>
+    
+    <script>
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+            // Toggle menu when clicking hamburger
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileMenu.classList.contains('active') && 
+                    !mobileMenu.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        
+        // Form submission handler
+        document.getElementById('preplanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                planFor: document.getElementById('planFor').value,
+                preference: document.getElementById('preference').value,
+                contactMethod: document.getElementById('contactMethod').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create WhatsApp message
+            const whatsappMessage = encodeURIComponent(
+                `*Pre-Planning Consultation Request*\n\n` +
+                `Name: ${formData.firstName} ${formData.lastName}\n` +
+                `Phone: ${formData.phone}\n` +
+                `Email: ${formData.email}\n` +
+                `Planning for: ${formData.planFor}\n` +
+                `Preference: ${formData.preference}\n` +
+                `Contact via: ${formData.contactMethod}\n\n` +
+                `Message: ${formData.message}`
+            );
+            
+            // Open WhatsApp
+            window.open('https://wa.me/18763261263?text=' + whatsappMessage, '_blank');
+            
+            // Show success message
+            const formMessage = document.getElementById('formMessage');
+            formMessage.className = 'form-message success';
+            formMessage.textContent = '✓ Opening WhatsApp... Please send the pre-filled message or call us at 876-326-1263';
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
