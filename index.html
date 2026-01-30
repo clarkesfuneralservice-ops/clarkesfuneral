@@ -2,55 +2,432 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Clarke's Funeral Services | Professional Funeral Home in Kingston, Jamaica | 24/7 Support</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Clarke's Funeral Services provides compassionate funeral services in Kingston, Jamaica. 24/7 support for cremation, burial, repatriation & memorial services. Serving families with dignity since 2019. Call +1 876 326 1263">
-    <meta name="keywords" content="funeral services Jamaica, Kingston funeral home, cremation services Kingston, burial services Jamaica, funeral director Kingston, St Andrew funeral home, international repatriation Jamaica, memorial services">
-    <meta name="author" content="Clarke's Funeral Services">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/">
-    <meta property="og:title" content="Clarke's Funeral Services - Kingston, Jamaica">
-    <meta property="og:description" content="Compassionate funeral services serving Kingston & St. Andrew with dignity and care. Available 24/7.">
-    <meta property="og:image" content="logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Clarke's Funeral Services - Kingston, Jamaica">
-    <meta property="twitter:description" content="Compassionate funeral services serving Kingston & St. Andrew with dignity and care. Available 24/7.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/">
-    
-    <!-- Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Hero Section - Clarke's Funeral Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- EmailJS SDK for Contact Form -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FuneralHome",
-      "name": "Clarke's Funeral Services",
-      "image": "logo.png",
-      "telephone": "+1-876-326-1263",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kingston",
-        "addressRegion": "Kingston",
-        "addressCountry": "JM"
-      },
-      "openingHours": "Mo-Su 00:00-23:59",
-      "priceRange": "$$",
-      "url": "https://clarkesfuneralservice-ops.github.io/clarkesfuneral/",
-      "areaServed": ["Kingston", "St. Andrew", "Portland", "St. Thomas", "Clarendon"]
-    }
-    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #8b7355;
+            --accent: #c9a86a;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Navigation with LARGER Logo */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* LARGER LOGO */
+        .logo-container img {
+            height: 120px; /* Increased from 100px */
+            width: auto;
+            max-width: 400px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            background: var(--accent);
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #d4b57a;
+            transform: translateY(-2px);
+        }
+        
+        /* IMPROVED HERO with Background Image */
+        .hero {
+            margin-top: 150px; /* Adjusted for larger logo */
+            min-height: 90vh;
+            background: 
+                linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(139, 115, 85, 0.75)),
+                url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(201, 168, 106, 0.15), transparent 70%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Large Hero Logo */
+        .hero-logo {
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-logo img {
+            height: 200px; /* Very prominent logo */
+            width: auto;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+        
+        .btn-large {
+            padding: 1.3rem 3rem;
+            font-size: 1.2rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Alternative Hero Styles */
+        .hero-option-2 {
+            background: 
+                linear-gradient(to right, rgba(26, 26, 46, 0.9), rgba(139, 115, 85, 0.7)),
+                url('https://images.unsplash.com/photo-1502791451862-7bd8e38d7b30?w=1600&q=80');
+        }
+        
+        .hero-option-3 {
+            background: 
+                linear-gradient(135deg, rgba(26, 26, 46, 0.88), rgba(139, 115, 85, 0.82)),
+                url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1600&q=80');
+        }
+        
+        /* Demo Section */
+        .demo-section {
+            padding: 4rem 5%;
+            background: #f5f5f0;
+        }
+        
+        .demo-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .demo-header h2 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .demo-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .demo-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .demo-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .demo-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .logo-container img {
+                height: 80px;
+            }
+            
+            .hero {
+                margin-top: 120px;
+            }
+            
+            .hero-logo img {
+                height: 120px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation with Larger Logo -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Clarke's Funeral Services Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div>
+                <a href="tel:+18763261263" class="btn">Call 24/7</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO OPTION 1: With Large Logo & Peaceful Nature Background -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.png" alt="Clarke's Funeral Services">
+            </div>
+            <div class="hero-subtitle">Serving Families with Dignity Since 2019</div>
+            <h1>Compassionate Care When You Need It Most</h1>
+            <p>Professional funeral services throughout Kingston, St. Andrew, and surrounding parishes. Available 24 hours a day, 7 days a week to support your family.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/18763261263" class="btn btn-large">💬 Message on WhatsApp</a>
+                <a href="tel:+18763261263" class="btn btn-large btn-secondary">📞 Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section">
+        <div class="demo-header">
+            <h2>✨ Improvements Made</h2>
+            <p>Your hero section now features a larger, more prominent logo with beautiful background imagery</p>
+        </div>
+        
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>🎨 Larger Logo</h3>
+                <p><strong>Navigation:</strong> Increased from 100px to 120px</p>
+                <p><strong>Hero Section:</strong> Prominent 200px logo display</p>
+                <p><strong>Result:</strong> Your butterfly logo is now the focal point, immediately visible and memorable</p>
+            </div>
+            
+            <div class="demo-card">
+                <h3>🖼️ Background Images</h3>
+                <p><strong>Professional photography</strong> showing peaceful, serene nature scenes</p>
+                <p><strong>Dark overlay</strong> ensures text remains readable</p>
+                <p><strong>Fixed attachment</strong> creates elegant parallax effect on desktop</p>
+            </div>
+            
+            <div class="demo-card">
+                <h3>✨ Enhanced Design</h3>
+                <p><strong>Drop shadows</strong> on logo for depth</p>
+                <p><strong>Text shadows</strong> for better readability</p>
+                <p><strong>Animations</strong> for smooth entrance effects</p>
+                <p><strong>Larger buttons</strong> for better mobile interaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Hero Options Demo -->
+    <section class="demo-section" style="background: white;">
+        <div class="demo-header">
+            <h2>📸 Suggested Background Images</h2>
+            <p>Three professional options inspired by the reference website</p>
+        </div>
+        
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>Option 1: Peaceful Nature 🌿</h3>
+                <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800&q=80" alt="Peaceful garden path">
+                <p>Serene garden path symbolizing the journey - calming and respectful</p>
+            </div>
+            
+            <div class="demo-card">
+                <h3>Option 2: Tranquil Landscape 🌅</h3>
+                <img src="https://images.unsplash.com/photo-1502791451862-7bd8e38d7b30?w=800&q=80" alt="Peaceful landscape">
+                <p>Soft, peaceful landscape - comforting and dignified</p>
+            </div>
+            
+            <div class="demo-card">
+                <h3>Option 3: Gentle Light ☀️</h3>
+                <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&q=80" alt="Sunlight through trees">
+                <p>Natural sunlight through trees - hopeful and warm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Instructions -->
+    <section class="demo-section">
+        <div class="demo-header">
+            <h2>📋 How to Implement</h2>
+        </div>
+        
+        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 2rem;">Step-by-Step Implementation:</h3>
+            
+            <div style="background: #f5f5f0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">1. Replace Your Logo</h4>
+                <p>Replace the current <code>logo.png</code> with the new white logo file (logo.png already in outputs folder)</p>
+            </div>
+            
+            <div style="background: #f5f5f0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">2. Update Logo Size in CSS</h4>
+                <p>In your <code>index.html</code>, find <code>.logo-container img</code> and change:<br>
+                <code>height: 100px;</code> → <code>height: 120px;</code></p>
+            </div>
+            
+            <div style="background: #f5f5f0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">3. Add Background Image to Hero</h4>
+                <p>Replace the current hero <code>background:</code> style with one of the options from this demo</p>
+            </div>
+            
+            <div style="background: #f5f5f0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">4. Add Hero Logo Display</h4>
+                <p>Add the <code>.hero-logo</code> section inside your hero-content div to display the large centered logo</p>
+            </div>
+            
+            <div style="background: var(--accent); color: var(--primary); padding: 2rem; border-radius: 10px; text-align: center; font-weight: 600;">
+                ✅ Want me to apply these changes to your actual index.html file?<br>
+                Just say "Yes, apply the improvements!"
+            </div>
+        </div>
+    </section>
+</body>
+</html>
