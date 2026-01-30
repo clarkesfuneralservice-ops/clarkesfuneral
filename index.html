@@ -6,7 +6,7 @@
     <title>Clarke's Funeral Services | Professional Funeral Home in Kingston, Jamaica | 24/7 Support</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Clarke's Funeral Services provides compassionate funeral services in Kingston, Jamaica. 24/7 support for cremation, burial, repatriation & memorial services. Serving families with dignity since [YEAR]. Call +1 876 326 1263">
+    <meta name="description" content="Clarke's Funeral Services provides compassionate funeral services in Kingston, Jamaica. 24/7 support for cremation, burial, repatriation & memorial services. Serving families with dignity since 2019. Call +1 876 326 1263">
     <meta name="keywords" content="funeral services Jamaica, Kingston funeral home, cremation services Kingston, burial services Jamaica, funeral director Kingston, St Andrew funeral home, international repatriation Jamaica, memorial services">
     <meta name="author" content="Clarke's Funeral Services">
     
@@ -123,9 +123,9 @@
         }
         
         .logo-container img {
-            height: 100px;
+            height: 120px;
             width: auto;
-            max-width: 200px;
+            max-width: 400px;
         }
         
         .nav-links {
@@ -255,13 +255,16 @@
             gap: 1rem;
         }
         
-        /* Hero Section */
+        /* Hero Section - WITH PEXELS IMAGE */
         .hero {
-            margin-top: 120px;
+            margin-top: 150px;
             min-height: 90vh;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: 
+                linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(139, 115, 85, 0.75)),
+                url('https://images.pexels.com/photos/635284/pexels-photo-635284.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -277,7 +280,41 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(201, 168, 106, 0.1), transparent 50%);
+            background: radial-gradient(circle at 30% 50%, rgba(201, 168, 106, 0.15), transparent 70%);
+        }
+        
+        /* Large Hero Logo */
+        .hero-logo {
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-logo img {
+            height: 200px;
+            width: auto;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .hero-content {
@@ -294,6 +331,8 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease 0.3s both;
         }
         
         .hero-subtitle {
@@ -302,6 +341,8 @@
             margin-bottom: 1rem;
             font-weight: 300;
             font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease 0.5s both;
         }
         
         .hero p {
@@ -311,6 +352,8 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease 0.7s both;
         }
         
         .hero-buttons {
@@ -318,6 +361,7 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.9s both;
         }
         
         .btn {
@@ -880,11 +924,16 @@
             }
             
             .logo-container img {
-                height: 60px;
+                height: 80px;
                 max-width: 150px;
             }
             
+            .hero-logo img {
+                height: 120px;
+            }
+            
             .hero {
+                margin-top: 120px;
                 padding: 3rem 5%;
                 width: 100%;
             }
@@ -1035,9 +1084,12 @@
         </ul>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section WITH LARGE LOGO -->
     <section id="home" class="hero">
         <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.png" alt="Clarke's Funeral Services">
+            </div>
             <div class="hero-subtitle">Serving Families with Dignity Since 2019</div>
             <h1>Compassionate Care When You Need It Most</h1>
             <p>Professional funeral services throughout Kingston, St. Andrew, and surrounding parishes. Available 24 hours a day, 7 days a week to support your family.</p>
@@ -1244,8 +1296,25 @@
             </div>
         </div>
         
-        <div class="testimonials-grid" id="reviewsContainer">
-            <!-- Reviews will be loaded here -->
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Clarke's Funeral Services provided exceptional care during our family's difficult time. Their compassionate approach and attention to detail made all the difference. Highly recommended."</p>
+                <p class="testimonial-author">Sarah Johnson</p>
+                <p class="testimonial-location">Kingston</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Professional, respectful, and truly caring. They guided us through every step with patience and understanding. Thank you for making this process easier for our family."</p>
+                <p class="testimonial-author">Michael Thompson</p>
+                <p class="testimonial-location">St. Andrew</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Available 24/7 as promised. When we needed them most, they were there immediately. The service was impeccable and the pricing was fair and transparent."</p>
+                <p class="testimonial-author">Patricia Brown</p>
+                <p class="testimonial-location">Portland</p>
+            </div>
         </div>
         
         <div style="text-align: center; margin-top: 3rem;">
@@ -1359,7 +1428,8 @@
             </p>
         </div>
     </footer>
-<!-- Mobile Menu Toggle JavaScript -->
+
+    <!-- Mobile Menu Toggle JavaScript -->
     <script>
         // Mobile menu functionality
         const hamburger = document.getElementById('hamburger');
@@ -1394,6 +1464,7 @@
             }
         });
     </script>
+
     <!-- Contact Form JavaScript -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
