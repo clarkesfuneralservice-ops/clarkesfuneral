@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funeral Services FAQ | Clarke's Funeral Services | Kingston Jamaica</title>
-
     <!-- SEO Meta -->
     <meta name="description" content="Funeral service FAQs in Jamaica. Learn about cremation, burial, funeral costs, death certificates, repatriation, memorial services, and funeral planning in Kingston, Jamaica.">
     <meta name="keywords" content="funeral FAQ Jamaica, cremation Jamaica, burial Jamaica, funeral cost Jamaica, death certificate Jamaica, funeral planning Kingston, Clarke's Funeral Services">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
-    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/faq.html">
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         :root {
             --primary: #1a1a2e;
             --secondary: #8b7355;
@@ -34,19 +28,16 @@
             --text: #333333;
             --text-light: #666666;
         }
-        
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
         }
-        
         /* Navigation */
         nav {
             position: fixed;
@@ -58,7 +49,6 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -66,85 +56,74 @@
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo-container img {
             height: 100px;
             width: auto;
         }
-        
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
         .nav-links a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
         .nav-links a:hover {
             color: var(--accent);
         }
-        
         .nav-cta {
             display: flex;
             gap: 1rem;
         }
-        
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
         }
-        
         .hamburger span {
             width: 30px;
             height: 3px;
             background: var(--white);
             transition: all 0.3s;
         }
-        
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
-        
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-        
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(8px, -8px);
         }
-        
         .mobile-menu {
             display: none;
             position: fixed;
             top: 140px;
             left: 0;
             right: 0;
+            bottom: 0;
+            height: calc(100vh - 140px);
             background: rgba(26, 26, 46, 0.98);
             backdrop-filter: blur(10px);
             padding: 2rem;
             z-index: 999;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
-        
         .mobile-menu.active {
             display: block;
         }
-        
         .mobile-menu ul {
             list-style: none;
         }
-        
         .mobile-menu ul li {
             margin-bottom: 1.5rem;
         }
-        
         .mobile-menu ul li a {
             color: var(--white);
             text-decoration: none;
@@ -154,11 +133,9 @@
             padding: 0.5rem;
             transition: color 0.3s;
         }
-        
         .mobile-menu ul li a:hover {
             color: var(--accent);
         }
-        
         .btn {
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -172,18 +149,15 @@
             border: none;
             cursor: pointer;
         }
-        
         .btn-primary {
             background: var(--accent);
             color: var(--primary);
         }
-        
         .btn-primary:hover {
             background: #d4b57a;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 168, 106, 0.3);
         }
-        
         /* Hero */
         .hero {
             margin-top: 140px;
@@ -192,57 +166,47 @@
             text-align: center;
             color: var(--white);
         }
-        
         .hero h1 {
             font-size: 3.5rem;
             color: var(--white);
             margin-bottom: 1rem;
         }
-        
         .hero p {
             font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
             color: rgba(255, 255, 255, 0.95);
         }
-        
         /* Category Sections */
         .category-section {
             padding: 4rem 5%;
         }
-        
         .category-section:nth-child(even) {
             background: var(--light);
         }
-        
         .category-section:nth-child(odd) {
             background: var(--white);
         }
-        
         .section-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 3rem;
         }
-        
         .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
-        
         .accent-line {
             width: 60px;
             height: 3px;
             background: var(--accent);
             margin: 1rem auto;
         }
-        
         .container {
             max-width: 1000px;
             margin: 0 auto;
         }
-        
         /* FAQ Items */
         .faq-item {
             background: var(--white);
@@ -253,12 +217,10 @@
             border: 2px solid transparent;
             transition: all 0.3s;
         }
-        
         .faq-item:hover {
             border-color: var(--accent);
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
-        
         .faq-question {
             padding: 1.5rem 2rem;
             cursor: pointer;
@@ -271,11 +233,9 @@
             transition: background 0.3s;
             font-family: 'Playfair Display', serif;
         }
-        
         .faq-question:hover {
             background: var(--light);
         }
-        
         .faq-question::after {
             content: '+';
             font-size: 2rem;
@@ -283,28 +243,23 @@
             transition: transform 0.3s;
             font-weight: 300;
         }
-        
         .faq-question.active::after {
             transform: rotate(45deg);
         }
-        
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-        
         .faq-answer.active {
             max-height: 300px;
         }
-        
         .faq-answer-content {
             padding: 0 2rem 1.5rem;
             color: var(--text-light);
             line-height: 1.8;
             font-size: 1.05rem;
         }
-        
         /* Quick Links */
         .quick-links {
             background: var(--primary);
@@ -312,13 +267,11 @@
             text-align: center;
             color: var(--white);
         }
-        
         .quick-links h3 {
             color: var(--white);
             font-size: 2rem;
             margin-bottom: 2rem;
         }
-        
         .links-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -326,7 +279,6 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
         }
-        
         .link-card {
             background: rgba(255,255,255,0.1);
             padding: 2rem 1.5rem;
@@ -336,30 +288,25 @@
             transition: all 0.3s;
             border: 2px solid transparent;
         }
-        
         .link-card:hover {
             background: rgba(255,255,255,0.15);
             border-color: var(--accent);
             transform: translateY(-5px);
         }
-        
         .link-card .icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             display: block;
         }
-        
         .link-card h4 {
             color: var(--accent);
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
-        
         .link-card p {
             font-size: 0.9rem;
             opacity: 0.9;
         }
-        
         /* CTA Section */
         .cta-section {
             padding: 4rem 5%;
@@ -367,35 +314,29 @@
             text-align: center;
             color: var(--white);
         }
-        
         .cta-section h2 {
             font-size: 2.5rem;
             color: var(--white);
             margin-bottom: 1rem;
         }
-        
         .cta-section p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             color: rgba(255,255,255,0.95);
         }
-        
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
         .btn-white {
             background: var(--white);
             color: var(--primary);
         }
-        
         .btn-white:hover {
             background: var(--light);
         }
-        
         /* Footer */
         footer {
             background: var(--primary);
@@ -403,39 +344,31 @@
             padding: 2rem 5%;
             text-align: center;
         }
-        
         footer a {
             color: var(--accent);
             text-decoration: none;
         }
-        
         /* Responsive */
         @media (max-width: 968px) {
             .nav-links {
                 display: none !important;
             }
-            
             .nav-container > div:last-child {
                 display: none !important;
             }
-            
             .hamburger {
                 display: flex !important;
             }
-            
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
             .section-header h2 {
                 font-size: 2rem;
             }
-            
             .faq-question {
                 font-size: 1rem;
                 padding: 1.25rem 1.5rem;
             }
-            
             .faq-answer-content {
                 padding: 0 1.5rem 1.25rem;
             }
@@ -443,7 +376,6 @@
     </style>
 </head>
 <body>
-
 <!-- Navigation -->
 <nav>
     <div class="nav-container">
@@ -457,6 +389,8 @@
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="preplanning.html">Pre-Planning</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="obituaries.html">Obituaries</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <div class="hamburger" onclick="toggleMenu()">
@@ -469,7 +403,6 @@
         </div>
     </div>
 </nav>
-
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -484,13 +417,11 @@
         <li><a href="https://wa.me/18763261263" onclick="toggleMenu()">💬 WhatsApp</a></li>
     </ul>
 </div>
-
 <!-- Hero Section -->
 <section class="hero">
     <h1>Frequently Asked Questions</h1>
     <p>Everything you need to know about funeral services, cremation, burial, and memorial planning in Jamaica</p>
 </section>
-
 <!-- Cremation FAQs -->
 <section class="category-section">
     <div class="section-header">
@@ -508,7 +439,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Is cremation cheaper than burial in Jamaica?
@@ -519,7 +449,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 How much does cremation cost in Kingston, Jamaica?
@@ -530,7 +459,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 How long does the cremation process take?
@@ -541,7 +469,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Can I have a viewing before cremation?
@@ -554,7 +481,6 @@
         </div>
     </div>
 </section>
-
 <!-- Burial FAQs -->
 <section class="category-section">
     <div class="section-header">
@@ -572,7 +498,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Which cemeteries do you work with?
@@ -583,7 +508,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 What's included in your burial packages?
@@ -596,7 +520,6 @@
         </div>
     </div>
 </section>
-
 <!-- General Services FAQs -->
 <section class="category-section">
     <div class="section-header">
@@ -614,7 +537,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Do you provide international repatriation?
@@ -625,7 +547,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Do you offer memorial services?
@@ -636,7 +557,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Do you provide live streaming for funerals?
@@ -649,7 +569,6 @@
         </div>
     </div>
 </section>
-
 <!-- Payment & Planning FAQs -->
 <section class="category-section">
     <div class="section-header">
@@ -667,7 +586,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Can I pre-plan my funeral?
@@ -678,7 +596,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Do your prices include everything?
@@ -691,7 +608,6 @@
         </div>
     </div>
 </section>
-
 <!-- Availability & Service Area FAQs -->
 <section class="category-section">
     <div class="section-header">
@@ -709,7 +625,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 Where are you located and what areas do you serve?
@@ -720,7 +635,6 @@
                 </div>
             </div>
         </div>
-
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
                 How quickly can you respond?
@@ -733,7 +647,6 @@
         </div>
     </div>
 </section>
-
 <!-- Quick Links -->
 <section class="quick-links">
     <h3>Explore More</h3>
@@ -760,7 +673,6 @@
         </a>
     </div>
 </section>
-
 <!-- CTA Section -->
 <section class="cta-section">
     <h2>Still Have Questions?</h2>
@@ -771,20 +683,17 @@
         <a href="index.html#contact" class="btn btn-primary">Contact Form</a>
     </div>
 </section>
-
 <!-- Footer -->
 <footer>
     <p>Clarke's Funeral Services | 42 East Street, Kingston | Call: <a href="tel:+18763261263">876-326-1263</a></p>
     <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">© 2026 Clarke's Funeral Services. Serving families with dignity since 2019.</p>
 </footer>
-
 <script>
     // Mobile menu toggle - IMPROVED
     function toggleMenu() {
         console.log('Menu toggle clicked');
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
-        
         if (hamburger && mobileMenu) {
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
@@ -793,10 +702,8 @@
             console.error('Menu elements not found');
         }
     }
-    
     // Make toggleMenu available globally
     window.toggleMenu = toggleMenu;
-    
     // Add event listeners for better mobile support
     document.addEventListener('DOMContentLoaded', function() {
         const hamburger = document.querySelector('.hamburger');
@@ -806,7 +713,6 @@
                 e.stopPropagation();
                 toggleMenu();
             });
-            
             hamburger.addEventListener('touchend', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -814,25 +720,21 @@
             });
         }
     });
-    
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const nav = document.querySelector('nav');
-        
         if (nav && !nav.contains(event.target) && mobileMenu && mobileMenu.classList.contains('active')) {
             if (hamburger) hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
         }
     });
-    
     // FAQ toggle
     function toggleFAQ(element) {
         const answer = element.nextElementSibling;
         const allQuestions = document.querySelectorAll('.faq-question');
         const allAnswers = document.querySelectorAll('.faq-answer');
-        
         // Close all other FAQs
         allQuestions.forEach(q => {
             if (q !== element) {
@@ -844,7 +746,6 @@
                 a.classList.remove('active');
             }
         });
-        
         // Toggle clicked FAQ
         element.classList.toggle('active');
         answer.classList.toggle('active');
