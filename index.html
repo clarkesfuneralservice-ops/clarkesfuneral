@@ -150,35 +150,33 @@
             display: none;
             flex-direction: column;
             gap: 6px;
-            background: var(--accent);
-            border: 3px solid var(--primary);
+            background: transparent;
+            border: 2px solid var(--white);
             border-radius: 8px;
-            padding: 15px 18px;
+            padding: 12px 15px;
             cursor: pointer;
-            -webkit-tap-highlight-color: rgba(201, 168, 106, 0.5);
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 10001;
             transition: all 0.3s ease;
-            min-width: 60px;
-            min-height: 60px;
+            min-width: 50px;
+            min-height: 50px;
             justify-content: center;
             align-items: center;
         }
         
         .hamburger:hover {
-            background: #d4b57a;
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .hamburger:active {
             transform: scale(0.95);
-            background: var(--secondary);
         }
         
         .hamburger span {
-            width: 30px;
-            height: 4px;
-            background: var(--primary);
+            width: 25px;
+            height: 3px;
+            background: var(--white);
             display: block;
             transition: all 0.3s ease;
             border-radius: 3px;
@@ -531,7 +529,7 @@
         
         .about-image {
             background: 
-                linear-gradient(135deg, rgba(26, 26, 46, 0.5), rgba(139, 115, 85, 0.5)),
+                linear-gradient(135deg, rgba(26, 26, 46, 0.3), rgba(139, 115, 85, 0.3)),
                 url('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-size: cover;
             background-position: center;
@@ -556,7 +554,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.6), rgba(139, 115, 85, 0.6));
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.4), rgba(139, 115, 85, 0.4));
             border-radius: 20px;
         }
         
@@ -1006,6 +1004,16 @@
                 min-height: 300px;
                 width: 100%;
                 padding: 1.5rem;
+            }
+            
+            .about-image div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                max-width: 100% !important;
+                gap: 1rem !important;
+            }
+            
+            .about-image div[style*="grid-template-columns"] > div {
+                padding: 1.2rem !important;
             }
             
             .about-values {
