@@ -530,7 +530,7 @@
         .about-image {
             background: 
                 linear-gradient(135deg, rgba(26, 26, 46, 0.3), rgba(139, 115, 85, 0.3)),
-                url('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=1600');
+                url('https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-size: cover;
             background-position: center;
             border-radius: 20px;
@@ -556,6 +556,24 @@
             bottom: 0;
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.4), rgba(139, 115, 85, 0.4));
             border-radius: 20px;
+        }
+        
+        .about-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .about-info-box {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         
         .about-stats {
@@ -1006,14 +1024,15 @@
                 padding: 1.5rem;
             }
             
-            .about-image div[style*="grid-template-columns"] {
+            .about-info-grid {
                 grid-template-columns: 1fr !important;
                 max-width: 100% !important;
                 gap: 1rem !important;
             }
             
-            .about-image div[style*="grid-template-columns"] > div {
+            .about-info-box {
                 padding: 1.2rem !important;
+                width: 100%;
             }
             
             .about-values {
@@ -1186,20 +1205,20 @@
                     <p style="font-size: 2rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-weight: 600; text-shadow: 0 4px 15px rgba(0,0,0,0.8);">Clarke's Funeral Services</p>
                     <div style="width: 80px; height: 3px; background: var(--accent); margin: 1.5rem auto;"></div>
                     <p style="font-size: 1.3rem; margin-bottom: 2rem; line-height: 1.8; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Proudly Serving Jamaica</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; width: 100%; max-width: 400px;">
-                        <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    <div class="about-info-grid">
+                        <div class="about-info-box">
                             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📍</div>
                             <div style="font-size: 1rem; font-weight: 600;">Kingston</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <div class="about-info-box">
                             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🕒</div>
                             <div style="font-size: 1rem; font-weight: 600;">24/7 Service</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <div class="about-info-box">
                             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📞</div>
                             <div style="font-size: 1rem; font-weight: 600;">876-326-1263</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <div class="about-info-box">
                             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">❤️</div>
                             <div style="font-size: 1rem; font-weight: 600;">Family Focused</div>
                         </div>
@@ -1538,6 +1557,47 @@
                 }
             }, 2000);
         });
+    </script>
+</body>
+</html>
+          
+ 
+        
+      
+          
+        
+        
+    
+      
+      
+          
+         
+           
+           
+        
+     
+        
+       
+        
+        
+         
+        
+        
+     
+       
+         
+            
+           
+         
+               
+            
+        
+ 
+       
+     
+               
+  
+          
     </script>
 </body>
 </html>
