@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clarkesfuneralservice-ops.github.io/clarkesfuneral/sitemap.xml
-
-# Block repository access
-Disallow: /blob/
-Disallow: /tree/
+Sitemap: https://clarkesfuneralservices.com/sitemap.xml
