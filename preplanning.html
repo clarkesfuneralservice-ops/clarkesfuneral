@@ -8,7 +8,11 @@
     <meta name="description" content="Pre-plan your funeral with Clarke's Funeral Services in Kingston, Jamaica. Lock in today's prices, ease the burden on loved ones, and ensure your wishes are honored. Free consultation: 876-326-1263">
     <meta name="keywords" content="funeral pre-planning Jamaica, pre-arrange funeral Kingston, funeral planning ahead, funeral insurance Jamaica, pre-need funeral services">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://clarkesfuneralservice-ops.github.io/clarkesfuneral/preplanning.html">
     <!-- Fonts -->
@@ -747,7 +751,7 @@
                 <p>Fill out this form and we'll contact you within 24 hours to schedule your no-obligation consultation.</p>
             </div>
             <div id="formMessage" class="form-message"></div>
-            <form id="preplanForm">
+            <form id="preplanForm" action="https://formspree.io/f/mdawnrzw" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name *</label>
@@ -852,42 +856,51 @@
         }
         
         // Form submission handler
-        document.getElementById('preplanForm').addEventListener('submit', function(e) {
+        document.getElementById('preplanForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                planFor: document.getElementById('planFor').value,
-                preference: document.getElementById('preference').value,
-                contactMethod: document.getElementById('contactMethod').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Create WhatsApp message
-            const whatsappMessage = encodeURIComponent(
-                `*Pre-Planning Consultation Request*\n\n` +
-                `Name: ${formData.firstName} ${formData.lastName}\n` +
-                `Phone: ${formData.phone}\n` +
-                `Email: ${formData.email}\n` +
-                `Planning for: ${formData.planFor}\n` +
-                `Preference: ${formData.preference}\n` +
-                `Contact via: ${formData.contactMethod}\n\n` +
-                `Message: ${formData.message}`
-            );
-            
-            // Open WhatsApp
-            window.open('https://wa.me/18763261263?text=' + whatsappMessage, '_blank');
-            
-            // Show success message
             const formMessage = document.getElementById('formMessage');
-            formMessage.className = 'form-message success';
-            formMessage.textContent = '✓ Opening WhatsApp... Please send the pre-filled message or call us at 876-326-1263';
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const form = this;
             
-            // Reset form
-            this.reset();
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.className = 'form-message';
+            formMessage.textContent = '';
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success!
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = '✓ Thank you! Your pre-planning consultation request has been received. We\'ll contact you within 24 hours.';
+                    form.reset();
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Request Free Consultation';
+                } else {
+                    // Error
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Show error message
+                formMessage.className = 'form-message error';
+                formMessage.textContent = '✗ Sorry, there was an error. Please call us at +1 876 326 1263 or WhatsApp us.';
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request Free Consultation';
+            }
         });
     </script>
 </body>
