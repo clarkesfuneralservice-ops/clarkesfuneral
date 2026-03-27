@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://clarkesfuneralservices.com/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Main Service Pages -->
   <url>
     <loc>https://clarkesfuneralservices.com/pricing.html</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://clarkesfuneralservices.com/preplanning.html</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://clarkesfuneralservices.com/faq.html</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://clarkesfuneralservices.com/obituaries.html</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- NEW SEO Pages (HIGH PRIORITY) -->
+  <url>
+    <loc>https://clarkesfuneralservices.com/cremation-cost-jamaica.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <url>
+    <loc>https://clarkesfuneralservices.com/funeral-packages-jamaica.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
 </urlset>
