@@ -247,12 +247,16 @@
             transition: all 0.3s;
             border: 2px solid var(--accent);
             margin: 0.5rem;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
         }
         
         .btn:hover {
-            background: transparent;
-            border-color: var(--white);
+            background: var(--secondary);
+            border-color: var(--accent);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 168, 106, 0.3);
         }
         
         /* Footer */
