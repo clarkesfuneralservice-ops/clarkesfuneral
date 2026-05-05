@@ -672,24 +672,22 @@
     const obituaries = [
         {
             id: 1,
-            name: "Sample Memorial",
-            birthDate: "January 1, 1950",
-            deathDate: "December 31, 2025",
-            photo: null,
-            excerpt: "This is a sample obituary to demonstrate the layout. Replace with actual obituaries...",
-            fullStory: `This is a sample obituary memorial page. In production, you would replace this with actual content about the deceased.
-The life story section can include multiple paragraphs detailing the person's life, achievements, family, hobbies, and the impact they had on others.
-You can add as much or as little detail as the family wishes to share.`,
-            serviceDate: "January 10, 2026",
-            serviceTime: "10:00 AM",
-            serviceLocation: "Church Name, Kingston",
-            condolences: [
-                {
-                    author: "Sample Friend",
-                    date: "2 days ago",
-                    message: "Our heartfelt condolences to the family. They will be deeply missed."
-                }
-            ]
+            name: "Carlene Leone Smith",
+            nickname: '"Ms. Smith"',
+            birthDate: "June 28, 1971",
+            deathDate: "April 30, 2026",
+            photo: "carlene-smith-photo.jpg",
+            excerpt: "It is with deep love and gratitude that we announce the passing of our beloved Carlene Leone Smith, affectionately called 'Ms. Smith'. She was a devoted mother, caring mother-in-law, loving grandmother, cherished sister and loyal friend to many.",
+            fullStory: `It is with deep love and gratitude for her life that we announce the passing of our beloved Carlene Leone Smith, affectionately called "Ms. Smith", on April 30, 2026. She was a devoted mother, caring mother-in-law, loving grandmother, cherished sister and loyal friend to many.
+
+She leaves to mourn her only child and daughter Shannel; son-in-law Jefferson (Jeff); and precious grandchildren Jerome and Dianxia.
+
+She is also lovingly remembered by her brothers Junior, Hansel, Phillip, Patrick, Cornel, Caldeen, Leonard, and Daniel; her sisters Eileen, Lorna, and Alma; along with several nieces, nephews, other relatives, extended family and dear friends.`,
+            serviceDate: "Saturday, May 9, 2026",
+            serviceTime: "11:00 AM",
+            serviceLocation: "Bethlehem Reformed Church, Pleasant View, 8 Miles Bull Bay, St. Andrew",
+            dedicatedPage: "carlene-smith.html",
+            condolences: []
         }
     ];
     // Load obituaries on page load
@@ -708,17 +706,18 @@ You can add as much or as little detail as the family wishes to share.`,
             return;
         }
         grid.innerHTML = obituaries.map(obit => `
-            <div class="obituary-card" onclick="openModal(${obit.id})">
+            <div class="obituary-card" ${obit.dedicatedPage ? `onclick="window.location.href='${obit.dedicatedPage}'"` : `onclick="openModal(${obit.id})"`} style="cursor: pointer;">
                 <div class="obituary-image">
                     ${obit.photo ? `<img src="${obit.photo}" alt="${obit.name}">` : '<div class="placeholder-icon">🕊️</div>'}
                 </div>
                 <div class="obituary-content">
                     <h3 class="obituary-name">${obit.name}</h3>
+                    ${obit.nickname ? `<p style="font-style: italic; color: var(--secondary); margin-top: 0.25rem;">${obit.nickname}</p>` : ''}
                     <p class="obituary-dates">${obit.birthDate} - ${obit.deathDate}</p>
                     <p class="obituary-excerpt">${obit.excerpt}</p>
                     <div class="obituary-footer">
                         <span class="service-date">📅 ${obit.serviceDate}</span>
-                        <a href="#" class="view-full" onclick="event.preventDefault(); openModal(${obit.id})">View Full Tribute →</a>
+                        <a href="${obit.dedicatedPage || '#'}" class="view-full" onclick="${obit.dedicatedPage ? '' : 'event.preventDefault(); openModal(' + obit.id + ')'}">View Full Tribute →</a>
                     </div>
                 </div>
             </div>
