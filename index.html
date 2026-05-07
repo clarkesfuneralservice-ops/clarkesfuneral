@@ -763,6 +763,108 @@
             color: rgba(255, 255, 255, 0.95);
         }
         
+        /* Recent Obituaries Section */
+        .recent-obituaries {
+            padding: 4rem 5%;
+            background: var(--light);
+        }
+        
+        .obituary-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .obituary-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .obituary-card-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+        
+        .obituary-photo {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .obituary-details {
+            padding: 2rem 2rem 2rem 0;
+        }
+        
+        .obituary-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .obituary-nickname {
+            font-style: italic;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .obituary-dates {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .obituary-excerpt {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .obituary-service {
+            background: var(--light);
+            padding: 1rem;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .view-memorial-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .view-memorial-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .obituary-card-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .obituary-photo {
+                width: 100%;
+                height: 350px;
+            }
+            
+            .obituary-details {
+                padding: 2rem;
+            }
+        }
+        
         /* Contact Section */
         .contact-grid {
             max-width: 1200px;
@@ -1370,6 +1472,36 @@
         
         <div style="text-align: center; margin-top: 3rem;">
             <a href="https://search.google.com/local/reviews?placeid=ChIJ1ZRyl5hB244RAet3AYWEN60" target="_blank" class="btn btn-primary">Read All Reviews on Google</a>
+        </div>
+    </section>
+
+    <!-- Recent Obituaries Section -->
+    <section class="recent-obituaries">
+        <div class="section-header">
+            <h2>Recent Obituaries</h2>
+            <div class="accent-line"></div>
+            <p>Honoring the lives of those we've served with dignity and compassion</p>
+        </div>
+
+        <div class="obituary-card" onclick="window.location.href='carlene-smith.html'">
+            <div class="obituary-card-content">
+                <img src="carlene-smith-photo.jpg" alt="Carlene Leone Smith" class="obituary-photo">
+                <div class="obituary-details">
+                    <h3 class="obituary-name">Carlene Leone Smith</h3>
+                    <p class="obituary-nickname">"Ms. Smith"</p>
+                    <p class="obituary-dates">June 28, 1971 – April 30, 2026</p>
+                    <p class="obituary-excerpt">It is with deep love and gratitude that we announce the passing of our beloved Carlene Leone Smith, affectionately called "Ms. Smith". She was a devoted mother, caring mother-in-law, loving grandmother, cherished sister and loyal friend to many.</p>
+                    <div class="obituary-service">
+                        <strong>Thanksgiving Service:</strong> Saturday, May 9, 2026 at 11:00 AM<br>
+                        Bethlehem Reformed Church, Pleasant View, Bull Bay
+                    </div>
+                    <a href="carlene-smith.html" class="view-memorial-btn" onclick="event.stopPropagation()">View Full Memorial →</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="obituaries.html" class="btn btn-secondary">View All Obituaries</a>
         </div>
     </section>
 
