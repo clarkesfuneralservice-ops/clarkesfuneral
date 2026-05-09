@@ -760,6 +760,12 @@
                 Pleasant View, 8 Miles Bull Bay<br>
                 St. Andrew, Jamaica</p>
             </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.youtube.com/live/9KOy2tVFQFU?si=pLRvpBBWdMMuBpN-" target="_blank" class="btn" style="background: #ff0000; border-color: #ff0000; font-size: 1.2rem; padding: 1.2rem 2.5rem;">
+                    🔴 WATCH LIVE STREAM
+                </a>
+                <p style="color: white; margin-top: 1rem; font-size: 0.95rem;">Click to watch the service live on YouTube</p>
+            </div>
         </div>
 
         <!-- Memorial Poem -->
@@ -796,23 +802,23 @@
             </p>
         </div>
 
-        <!-- Video Tribute (Optional - uncomment and add YouTube link when ready) -->
-        <!--
+        <!-- Video Tribute - Live Stream -->
         <div class="video-tribute">
-            <h2>Video Tribute</h2>
+            <h2>Live Stream - Thanksgiving Service</h2>
             <div class="video-container">
                 <iframe 
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                    src="https://www.youtube.com/embed/9KOy2tVFQFU" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
             </div>
             <p style="text-align: center; margin-top: 1.5rem; color: #666;">
-                A celebration of Carlene's beautiful life and cherished memories
+                <strong>Saturday, May 9, 2026 at 11:00 AM</strong><br>
+                Bethlehem Reformed Church, Pleasant View, Bull Bay<br>
+                Watch the service live or replay anytime
             </p>
         </div>
-        -->
 
         <!-- Share Section -->
         <div class="share-section">
@@ -827,11 +833,21 @@
         <!-- QR Code Section -->
         <div class="qr-code-section">
             <h3>Share This Memorial</h3>
-            <p style="color: #666; margin-bottom: 1.5rem;">Scan this QR code to view this memorial on your phone</p>
+            <p style="color: #666; margin-bottom: 1.5rem;">Scan to view this memorial page on your phone</p>
             <div class="qr-code-container">
-                <img id="qrCode" src="" alt="QR Code">
+                <img id="qrCode" src="" alt="QR Code - Memorial Page">
             </div>
             <p class="qr-instructions">Perfect for sharing at the service or in memorial programs</p>
+        </div>
+
+        <!-- Live Stream QR Code -->
+        <div class="qr-code-section" style="background: #fff3cd; border-top: 3px solid #ff0000;">
+            <h3 style="color: #d32f2f;">🔴 Live Stream QR Code</h3>
+            <p style="color: #666; margin-bottom: 1.5rem; font-weight: 600;">Scan to watch the service live on YouTube</p>
+            <div class="qr-code-container" style="border-color: #ff0000;">
+                <img id="qrCodeLiveStream" src="" alt="QR Code - Live Stream">
+            </div>
+            <p class="qr-instructions" style="color: #d32f2f; font-weight: 600;">Saturday, May 9, 2026 at 11:00 AM</p>
         </div>
 
         <!-- Guestbook Section -->
@@ -961,9 +977,14 @@
             const pageURL = window.location.href;
             const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pageURL)}`;
             document.getElementById('qrCode').src = qrCodeURL;
+            
+            // Generate Live Stream QR Code
+            const liveStreamURL = 'https://www.youtube.com/live/9KOy2tVFQFU?si=pLRvpBBWdMMuBpN-';
+            const qrCodeLiveStreamURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(liveStreamURL)}`;
+            document.getElementById('qrCodeLiveStream').src = qrCodeLiveStreamURL;
         }
 
-        // Generate QR code when page loads
+        // Generate QR codes when page loads
         window.addEventListener('load', generateQRCode);
 
         // Condolence Form Submission
