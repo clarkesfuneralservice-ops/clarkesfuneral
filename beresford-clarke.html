@@ -757,6 +757,12 @@
                 83 East Street, Kingston, Jamaica</p>
                 <p style="margin-top: 1rem;"><strong>Interment:</strong> Dovecot Memorial Park</p>
             </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.youtube.com/live/pffyZbPwqd4?si=xvhal52amC1wj9-N" target="_blank" class="btn" style="background: #ff0000; border-color: #ff0000; font-size: 1.2rem; padding: 1.2rem 2.5rem;">
+                    🔴 WATCH LIVE STREAM
+                </a>
+                <p style="color: white; margin-top: 1rem; font-size: 0.95rem;">Click to watch the service live on YouTube</p>
+            </div>
         </div>
 
         <!-- Memorial Poem -->
@@ -764,6 +770,24 @@
             <p>Gone from our sight, but never from our hearts.<br>
             His memory lives on in all those he touched.<br>
             May he rest in eternal peace.</p>
+        </div>
+
+        <!-- Video Tribute - Live Stream -->
+        <div class="video-tribute">
+            <h2>Live Stream - Funeral Service</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/pffyZbPwqd4" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: #666;">
+                <strong>Saturday, May 30, 2026 at 10:00 AM</strong><br>
+                St. George's Anglican Church, 83 East Street, Kingston<br>
+                Watch the service live or replay anytime
+            </p>
         </div>
 
         <!-- Photo Gallery -->
@@ -812,6 +836,16 @@
             <p class="qr-instructions">Perfect for sharing at the service or in memorial programs</p>
         </div>
 
+        <!-- Live Stream QR Code -->
+        <div class="qr-code-section" style="background: #fff3cd; border-top: 3px solid #ff0000;">
+            <h3 style="color: #d32f2f;">🔴 Live Stream QR Code</h3>
+            <p style="color: #666; margin-bottom: 1.5rem; font-weight: 600;">Scan to watch the service live on YouTube</p>
+            <div class="qr-code-container" style="border-color: #ff0000;">
+                <img id="qrCodeLiveStream" src="" alt="QR Code - Live Stream">
+            </div>
+            <p class="qr-instructions" style="color: #d32f2f; font-weight: 600;">Saturday, May 30, 2026 at 10:00 AM</p>
+        </div>
+
         <!-- Guestbook Section -->
         <div class="guestbook-section">
             <h2>Messages of Condolence</h2>
@@ -842,7 +876,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="relationship">Your Relationship to Mr.Clarke (optional)</label>
+                        <label for="relationship">Your Relationship to Mr. Clarke (optional)</label>
                         <input type="text" id="relationship" name="relationship" placeholder="e.g., Friend, Coworker, Neighbor">
                     </div>
                     
@@ -939,6 +973,13 @@
             const pageURL = window.location.href;
             const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(pageURL)}`;
             document.getElementById('qrCode').src = qrCodeURL;
+            
+            // Generate Live Stream QR Code
+            const liveStreamURL = 'https://www.youtube.com/live/pffyZbPwqd4?si=xvhal52amC1wj9-N';
+            const qrCodeLiveStreamURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(liveStreamURL)}`;
+            if (document.getElementById('qrCodeLiveStream')) {
+                document.getElementById('qrCodeLiveStream').src = qrCodeLiveStreamURL;
+            }
         }
 
         // Generate QR code when page loads
@@ -1001,7 +1042,7 @@
             {
                 author: "Tricia Mcdonald",
                 relationship: "Niece",
-                date: "May 28, 2026",
+                date: "May 9, 2026",
                 message: "Uncle Beres will be deeply missed. He will always be in our hearts 💕"
             }
         ];
